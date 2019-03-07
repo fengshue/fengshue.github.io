@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0aeb;
+  background: #50fac8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2697,6 +2697,7 @@ pre .javascript .function {
   }
 }
 .sidebar {
+  position: static;
   float: left;
   margin-top: 300px;
   width: 240px;
@@ -2989,4 +2990,118 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background-image: url("/images/background4.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.content-wrap {
+  border-radius: 10px;
+  opacity: 0.9;
+}
+.header-inner {
+  border-radius: 10px;
+  left: -10%;
+}
+.site-meta {
+  background: -webkit-linear-gradient(top, #228b22, #fff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(top, #228b22, #fff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(top, #228b22, #fff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(top, #228b22, #fff); /* 标准的语法 */
+}
+.stem {
+  height: 120px;
+  width: 18px;
+  border-right: 6px solid #460f11;
+  border-radius: 50%;
+  bottom: 30px;
+  position: relative;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  left: -6px;
+}
+.stem:before {
+  height: 10px;
+  width: 40px;
+  border-bottom: 3px solid #460f11;
+  border-radius: 0% 20% 50% 50%;
+  top: 50px;
+  position: absolute;
+  content: "";
+  left: -25px;
+  z-index: 99;
+  -webkit-transform: rotateZ(15deg);
+  -moz-transform: rotateZ(15deg);
+  -ms-transform: rotateZ(15deg);
+  -o-transform: rotateZ(15deg);
+  transform: rotateZ(15deg);
+}
+.stem:after {
+  height: 10px;
+  width: 45px;
+  border-bottom: 3px solid #460f11;
+  border-radius: 0% 20% 50% 50%;
+  top: 20px;
+  position: absolute;
+  content: "";
+  left: 10px;
+  -webkit-transform: rotateZ(-30deg);
+  -moz-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  -o-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+.content-wrap {
+  float: none;
+  box-sizing: border-box;
+  background: #f0fff0;
+  padding: 40px;
+  width: 800px;
+  min-height: 800px;
+  box-shadow: initial;
+  border-radius: initial;
+  margin-left: 22%;
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .content-wrap {
+    width: 100%;
+    padding: 20px;
+    border-radius: initial;
+    margin-left: 0;
+  }
+  .header-inner {
+    border-radius: 0;
+    left: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100%;
+    padding: 20px;
+    min-height: auto;
+    border-radius: initial;
+    margin-left: 0;
+  }
+  .header-inner {
+    border-radius: 0;
+    left: 0px;
+  }
+}
+.post {
+  padding: 20px;
+  box-shadow: 0 0 14px #cacbcb;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+}
+.menu .menu-item a {
+  text-align: center;
+}
+.affix-top {
+  position: absolute;
+  top: 320px;
+  left: 9%;
 }
