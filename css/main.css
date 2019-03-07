@@ -1660,7 +1660,7 @@ pre .javascript .function {
   font-family: UKIJ Ekran;
 }
 .sidebar {
-  position: fixed;
+  /* position: fixed; */
   right: 0;
   top: 0;
   bottom: 0;
