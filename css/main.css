@@ -2697,7 +2697,6 @@ pre .javascript .function {
   }
 }
 .sidebar {
-  position: static;
   float: left;
   margin-top: 300px;
   width: 240px;
