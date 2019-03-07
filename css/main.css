@@ -1660,7 +1660,6 @@ pre .javascript .function {
   font-family: UKIJ Ekran;
 }
 .sidebar {
-  /* position: fixed; */
   right: 0;
   top: 0;
   bottom: 0;
@@ -1823,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #50fac8;
+  background: #504d5b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3095,6 +3094,7 @@ body {
   box-shadow: 0 0 14px #cacbcb;
   background: rgba(255,255,255,0.9);
   border-radius: 10px;
+  margin-bottom: 40px;
 }
 .menu .menu-item a {
   text-align: center;
@@ -3102,5 +3102,13 @@ body {
 .affix-top {
   position: absolute;
   top: 320px;
-  left: 9%;
+  left: 1.5%;
+  border-radius: 10px;
+}
+.affix {
+  margin-left: -95px;
+  border-radius: 10px;
+}
+.main {
+  padding-bottom: 0;
 }
