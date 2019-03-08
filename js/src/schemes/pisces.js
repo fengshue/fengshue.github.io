@@ -53,5 +53,16 @@ $(document).ready(function () {
     sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
   }
-
+  
+  (function test(){
+    scrollHandler();
+    window.addEventListener("scroll",scrollHandler);
+    function scrollHandler(){
+      if($(window).scrollTop()<310){
+        $(".sidebar-inner").addClass("affix-top");
+      }else if($(window).scrollTop()>310){
+        $(".sidebar-inner").removeClass("affix-top").addClass("affix");
+      }
+    }
+  })()
 });

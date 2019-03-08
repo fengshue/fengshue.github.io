@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #504d5b;
+  background: #ffb663;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3102,8 +3102,8 @@ body {
 .affix-top {
   position: absolute;
   top: 320px;
-  left: 1.5%;
   border-radius: 10px;
+  margin-left: -95px;
 }
 .affix {
   margin-left: -95px;
