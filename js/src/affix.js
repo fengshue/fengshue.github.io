@@ -158,5 +158,20 @@
       Plugin.call($spy, data)
     })
   })
-
+  document.onclick = function(e){
+    var heart = document.createElement("div");
+    var heartWrap = document.getElementsByClassName("container")[0];
+    heart.className = "heart shaky";
+    var r = 255*Math.random();
+    var g = 255*Math.random();
+    var b = 255*Math.random();
+    heart.style.background = "rgb("+r+","+g+","+b+")";
+    $(".heart").css("background","rgb("+r+","+g+","+b+")");
+    heartWrap.appendChild(heart);
+    $(".heart").css("top",e.clientY-13);
+    $(".heart").css("left",e.clientX-6);
+    setTimeout(function(){
+        heartWrap.removeChild(heart);
+    },2000);
+}
 }(jQuery);
