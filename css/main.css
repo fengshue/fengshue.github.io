@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cbffff;
+  background: #2193b8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2989,6 +2989,13 @@ pre .javascript .function {
     text-align: justify;
   }
 }
+@font-face {
+  font-family: "tianyingzhang";
+  src: url("../../fonts/YingZhangKaiShu-2.ttf");
+}
+html {
+  font-family: "tianyingzhang";
+}
 body {
   background-image: url("/images/background4.jpg");
   background-attachment: fixed;
@@ -3003,6 +3010,7 @@ body {
 .header-inner {
   border-radius: 10px;
   left: -10%;
+  color: #f00;
 }
 .site-meta {
   background: -webkit-linear-gradient(top, #228b22, #fff); /* Safari 5.1 - 6.0 */
@@ -3194,6 +3202,42 @@ body {
     -o-transform: translateY(-40px) rotate(45deg);
     transform: translateY(-40px) rotate(45deg);
   }
+}
+.jingHeart {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  background: #f00;
+  margin: 12px 16px;
+}
+.jingHeart:after,
+.jingHeart:before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  position: fixed;
+}
+.jingHeart:after {
+  top: -6px;
+}
+.jingHeart:before {
+  left: -6px;
+}
+.border1 {
+  border: 1px solid;
+  margin: 6px;
+  padding: 6px;
 }
 @-moz-keyframes shaky-slow {
   0% {
