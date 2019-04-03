@@ -370,8 +370,17 @@
 <h3 id="not-否定选择器"><a href="#not-否定选择器" class="headerlink" title=":not 否定选择器"></a>:not 否定选择器</h3><p>div:not([class=”demo”]){background:orange;}</p>
 <h3 id="empty-空标签选择器-（空格也算内容，伪元素不算）"><a href="#empty-空标签选择器-（空格也算内容，伪元素不算）" class="headerlink" title=":empty 空标签选择器 （空格也算内容，伪元素不算）"></a>:empty 空标签选择器 <font size="1" color="8DoderBlue">（空格也算内容，伪元素不算）</font></h3><p>p:empty{background:orange;}</p>
 <h3 id="target-目标元素选择器"><a href="#target-目标元素选择器" class="headerlink" title="target 目标元素选择器"></a>target 目标元素选择器</h3><p>用来匹配被location.hash选中的元素（即锚点元素）选择器可用于选取当前活动的目标元素。</p>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>:first-child<br>:last-child<br>:nth-chils(){}<br>:nth-last-chils(){}</p>
-<h2 id="属性选择器-1"><a href="#属性选择器-1" class="headerlink" title="属性选择器"></a><font color="CornflowerBlue">属性选择器</font></h2><h2 id="属性选择器-2"><a href="#属性选择器-2" class="headerlink" title="属性选择器"></a><font color="CornflowerBlue">属性选择器</font></h2>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>:first-child<br>:last-child<br>:nth-child(){},n代表自然数<br>&nbsp;&nbsp;&nbsp;&nbsp;eg : ul li:nth-child(1){ul的第一个li，其中括号里还可以是3n+1这种表达式}<br>:nth-last-child(){}</p>
+<p>:first-of-type<br>:last-of-type<br>:nth-of-type(){}<br>:nth-last-of-type(){}</p>
+<p>:only-child 唯一子元素选择器<br>&nbsp;&nbsp;&nbsp;&nbsp;选择是独生子的子元素，即该子元素不能有兄弟元素，它的父元素只有他一个直接子元素。<br>:only-of-type 类唯一选择器</p>
+<p>:enabled 可用的元素<br>:disabled 不可用的元素，如web表单，输入框等</p>
+<p>:checked选择框的被选中状态</p>
+<p>:read-only 只读元素选择器<br>:read-write 非只读元素选择器（读写）<br>&nbsp;&nbsp;&nbsp;&nbsp;eg :&lt; input type=”text” readonly=”readonly”/&gt; <input type="text" readonly="readonly" value="只可以读，不可以写"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; input type=”text”/&gt; <input type="text" value="可以读，也可以写"></p>
+<h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a><font color="CornflowerBlue">伪元素选择器</font></h2><p>伪元素的效果是通过添加一个实际的元素才能达到的。</p>
+<h3 id="selection-用来匹配突出显示的文本"><a href="#selection-用来匹配突出显示的文本" class="headerlink" title="::selection 用来匹配突出显示的文本"></a>::selection 用来匹配突出显示的文本</h3><p><style>.sele::selection{background: red;color: green;}</style></p>
+<div class="sele">突出显示</div>
+
+<h3 id="条件选择"><a href="#条件选择" class="headerlink" title="条件选择"></a>条件选择</h3><h2 id="属性选择器-1"><a href="#属性选择器-1" class="headerlink" title="属性选择器"></a><font color="CornflowerBlue">属性选择器</font></h2>
           
         
       
