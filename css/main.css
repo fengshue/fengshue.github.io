@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #060f60;
+  background: #ff553e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2997,7 +2997,7 @@ html {
   font-family: "tianyingzhang";
 }
 body {
-  background-image: url("/images/background6.jpg");
+  background-image: url("/images/background8.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
