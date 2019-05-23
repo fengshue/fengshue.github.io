@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36c149;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3238,6 +3238,10 @@ body {
   border: 1px solid;
   margin: 6px;
   padding: 6px;
+}
+.tag-cloud-tags a {
+  font-size: 12px !important;
+  color: #555 !important;
 }
 @-moz-keyframes shaky-slow {
   0% {
