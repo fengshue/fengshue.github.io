@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f9f453;
+  background: #d2abb1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2990,11 +2990,11 @@ pre .javascript .function {
   }
 }
 @font-face {
-  font-family: "tianyingzhang";
-  src: url("../fonts/YingZhangKaiShu-2.ttf");
+  font-family: "ziti";
+  src: url("../../fonts/kaiti.ttf");
 }
 html {
-  font-family: "tianyingzhang";
+  font-family: "ziti";
 }
 body {
   background-image: url("/images/background8.jpg");
