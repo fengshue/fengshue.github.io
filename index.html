@@ -372,53 +372,227 @@
             return createElement("div",[createElement("p",["hello"]),"world"])
         }
     })
-    console.log(vm)
+    // console.log(vm)
 </script>
 
 <p><strong>createElement 参数</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">#与 `v-bind:class` 的 API 相同，接受一个字符串、对象或字符串和对象组成的数组</span></span><br><span class="line">  <span class="string">'class'</span>: &#123;</span><br><span class="line">    foo: this.foo,</span><br><span class="line">    bar: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#与 `v-bind:style` 的 API 相同， 接受一个字符串、对象，或对象组成的数组</span></span><br><span class="line">  style: &#123;</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    fontSize: <span class="string">'14px'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#普通的 HTML 特性</span></span><br><span class="line">  attrs: &#123;</span><br><span class="line">    id: <span class="string">'foo'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#组件 prop</span></span><br><span class="line">  props: &#123;</span><br><span class="line">    myProp: <span class="string">'bar'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#DOM 属性</span></span><br><span class="line">  domProps: &#123;</span><br><span class="line">    innerHTML: <span class="string">'baz'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#事件监听器在 `on` 属性内， 但不再支持如 `v-on:keyup.enter` 这样的修饰器。需要在处理函数中手动检查 keyCode。</span></span><br><span class="line">  on: &#123;</span><br><span class="line">    click: this.clickHandler</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#仅用于组件，用于监听原生事件，而不是组件内部使用 `vm.$emit` 触发的事件。</span></span><br><span class="line">  nativeOn: &#123;</span><br><span class="line">    click: this.nativeClickHandler</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#自定义指令。注意，你无法对 `binding` 中的 `oldValue`  赋值，因为 Vue 已经自动为你进行了同步。</span></span><br><span class="line">  directives: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'my-custom-directive'</span>,</span><br><span class="line">      value: <span class="string">'2'</span>,</span><br><span class="line">      expression: <span class="string">'1 + 1'</span>,</span><br><span class="line">      arg: <span class="string">'foo'</span>,</span><br><span class="line">      modifiers: &#123;</span><br><span class="line">        bar: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">#作用域插槽的格式为 &#123; name: props =&gt; VNode | Array&lt;VNode&gt; &#125;</span></span><br><span class="line">  scopedSlots: &#123;</span><br><span class="line">    default: props =&gt; createElement(<span class="string">'span'</span>, props.text)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">#如果组件是其它组件的子组件，需为插槽指定名称</span></span><br><span class="line">  slot: <span class="string">'name-of-slot'</span>,</span><br><span class="line">  <span class="comment">#其它特殊顶层属性</span></span><br><span class="line">  key: <span class="string">'myKey'</span>,</span><br><span class="line">  ref: <span class="string">'myRef'</span>,</span><br><span class="line">  <span class="comment">#如果你在渲染函数中给多个元素都应用了相同的 ref 名， 那么 `$refs.myRef` 会变成一个数组。</span></span><br><span class="line">  refInFor: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>render中的if、else、for、map等</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var vm= new Vue(&#123;</span><br><span class="line">        el:<span class="string">"#app4"</span>,</span><br><span class="line">        data:&#123;flag:<span class="literal">false</span>&#125;,</span><br><span class="line">        <span class="keyword">if</span>(this.flag)&#123;</span><br><span class="line">            <span class="built_in">return</span> createElement(<span class="string">"div"</span>,[createElement(<span class="string">"p"</span>,[<span class="string">"hello"</span>]),<span class="string">"world"</span>]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">return</span> createElement(<span class="string">"div"</span>,[createElement(<span class="string">"p"</span>,[<span class="string">"hello"</span>])])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p></p><h1 id="vue实例-todoList"><a href="#vue实例-todoList" class="headerlink" title="vue实例-todoList"></a><font color="SteelBlue">vue实例-todoList</font></h1><p></p>
-<p><style>.todo{width:90%;height:auto;margin-left: 15px;border:1px solid rgb(87, 183, 121);border-radius:10px;padding:20px;}.todo br{display:none;}.titleTag{text-align:center;margin-top:20px;display:inline-block;width:20%;height:30px;border-radius:10px;background-color:rgb(87, 183, 121);color:#fff;}.titleTag input{width:40px;height:28px;border:none;background-color:rgb(87, 183, 121);border-radius:10px;color: #fff;text-align: center;}input{outline: none;}.ymcontent{display:inline-block;width:78%;height:28px;}.ymcontent input{width:90%;height:28px;border:1px solid rgb(87, 183, 121);border-radius:10px;}.clear{margin-left:10px;display:inline-block;width:18px;height:18px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAOQSURBVDhPRVNviFRVFP/d+96b93Z2ZvbPbNPmVrAKQeiaVpiRWH4QCsu0CMsPEVaoBCpIRVSwgn0IQkpkQSIL6ksUhEGlQRTWp1AKzexDsEi17u60s+7O25nZ9+/2O/dNdYY37757zv2d8zvnd5WhoWvvnzuMybnz6C/W8NCag7h9ZFPXk9uVa9/h299PoJ02sGroXuxY80bXA1igKF7GkxMlFPwAlXKANM0w12zg6Y1H8dhdr9rAz346gk8ujWN4sIogcBG22nb/7W1z0I5LoMyY7cd8lItlDFR9aA24rkYcZ5iqT2HPfccYnuKjCy9i9OYRFHs1DzLG06jPLiFKlvHOI4twhu6ZHZ/8+zKq1R5WIiwVhK3rKvQGZfw4+SV+nT6HkVoNhSCjD8h7YVDp8xE2IzSjaTgrH9DjMUI4UopShLExFsxj1oIbsAofhYIkkJjcrxkrH0obdDoJtOcWSSNGliqkiUISkwh7lCaw9FwCuK7smW5MninlWiyJFQpOEXr7nfsw27iOKEoZlDGYhxJtwUzGdyKHgCyTx9iqxM/uotM2mJmbwebRvdBb1u7CtvXPYLpeJzqBeECyZZljgQUoI6iA5GBMwN9yW+Hq1DVsWbUP60Z25OOXEk98cRBfXTyFvkoRBfbG8RxOJ4PjSOMdOC7XHIBM1BBwvrmIrbc9j113v2UpssbcBko3sZKU2TWoiP+qk7XQlP6wKK6733T2F2/pnu4CvXvmdUycfQWlngoHx4ayJ4ZpMzZfgKVmATEEsdP0NQYqffjw/CGcvnjUAqnvL502hz54FCuqNY5bkQ6pOKTiJZaSdkjH4/QsPRFrLkaJlcr+qP+F17Z+A6d3rD6+FDV4mBHURVdOVieKk1GUsdayz03uSSK7phV8B652Mb/0J3SzvcCaHTsZXhc+MjF5C2vRDXtCikJJEhjRksiB10b65LH5YbQAvXJ4DHJpjRGAfPTSExmxiK3ZCrHYDLnO+2NHLP9MJHFhGOHWvjugWp3QbH65hMH+AaK7VLJmuaTmGsy363hqw0tI1TI+//k4VtRuhB8YKwOP8gjDDtrxAt7b3cp11FiYwYNHhlEuFdHj+1Dsw2LrOh7fsB8HHp6wNRw/8yy+vnIKw9Ub7B3sxHLz2zi5exalYPB/QUZxB29+uhdXG7/QUcbOjS/g/tVPWJB/7YffPsbZyycRo4XRoTE8t2mCgvXoAf4BgNXKTxCeOB0AAAAASUVORK5CYII=) no-repeat;    vertical-align: -3px;}.titleTag .monthL{width:16px;padding:0;}.weekN{display:inline-block;}.week{text-align:center;}.week .titleTag{width:96%;   margin-right: 38px;}.week .date{width:163px;height:28px;display: inline-block;text-align:right;}.post-block .weekUl{margin-top:10px;padding:0;width: 100%;height: 280px;}.todo .week .weekUl li{list-style:none;height:35px;width:100%;text-align:left;}.todo .week .weekUl li span{text-align:center;color:rgb(87, 183, 121);display:inline-block;width:20%;}.todo .week .weekUl li input{width: 70%;height: 28px;border: 1px solid rgb(87, 183, 121);border-radius: 10px;}.w100{width:96%;margin-right:38px;margin-top:20px;}.l30{width:30%;}.lr20{margin:0  14px;}.noteList{width:70%;position: relative;top: -44px;left: 15%;}.todo .notes .noteList li{position:relative;list-style:none;border-bottom:1px solid rgba(87, 183, 121,0.5);width: 98%;margin-left: 7px;padding-bottom:5px;}.todo .noteLi .destory{outline:none;display:none;position:absolute;right:-11px;bottom:0;width:40px;height:40px;margin:auto 0 ;font-size:30px;color:#cc9a9a;margin-bottom:11px;transition:color 0.2s ease-out;border: none;background: transparent;}.todo .noteLi .destory:hover{color:#af5b5e;}.todo .noteLi:hover .destory{display: block;}@media (min-width: 0px) and (max-width: 500px) {.ymcontent input {width: 70%;}.week .date{display:none;}}.noteThing{width:100%;}.noteThing input{width:68%;margin-left:7px;}</style></p>
-<p><div class="todo" id="todoList"><br>        <div class="year"><br>            <div class="titleTag"><input type="text">年目标</div><br>            <div class="ymcontent"><br>                <input type="text" class="year_content"><br>                <i class="clear"></i><br>            </div><br>        </div><br>        <div class="month"><br>            <div class="titleTag"><input type="text">月任务</div><br>            <div class="ymcontent"><br>                <input type="text" class="month_content"><br>                <i class="clear"></i><br>            </div><br>        </div><br>        <div class="week"><br>            <div class="titleTag"><br>                <div class="weekN">第<input type="text" class="monthL">/<input type="text" class="monthL">周计划</div><br>                <div class="date"><input type="text" class="monthL">月<input type="text" class="monthL">日-<input type="text" class="monthL">月<input type="text" class="monthL">日</div><br>            </div><br>            <ul class="weekUl"><br>                <li><br>                    <span>周一</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周二</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周三</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周四</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周五</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周六</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>                <li><br>                    <span>周日</span><br>                    <input type="text"><br>                    <i class="clear"></i><br>                </li><br>            </ul><br>        </div><br>        <div class="titleTag w100">便利贴</div><br>        <div class="notes"><br>            <div class="ymcontent noteThing"><br>                <div class="titleTag">添加事项</div><br>                <input type="text" class="year_content" @keyup.enter="enterHandle"><br>            </div><br>            <div class="ymcontent noteThing"><br>                <a class="titleTag l30" href="#all">所有任务<span></span></a><br>                <a class="titleTag l30 lr20" href="#un">未完成任务<span></span></a><br>                <a class="titleTag l30" href="#ed">已完成任务<span></span></a><br>            </div><br>            <div class="titleTag">任务列表</div><br>            <ul class="noteList clearFix"><br>                <li v-for="(item,index) in textArr" :class="{noteLi:true,gray:item.checked}"><br>                    <input type="checkbox" class="toggle" v-model="item.checked"><br>                    <label></label><br>                    <button class="destory" @click="clearHandle(index)">x</button><br>                </li><br>            </ul><br>        </div><br>    </div></p>
+<p></p><h1 id="vue实例-todoList"><a href="#vue实例-todoList" class="headerlink" title="vue实例-todoList"></a><font color="SteelBlue">vue实例-todoList</font></h1><br>markdown不支持霜大括号写法，所以双大括号的内容无法展现。但是实质上的逻辑都是没问题的。<p></p>
+<p><style>.todo {width: 90%;height: auto;margin-left: 15px;border: 1px solid rgb(87, 183, 121);border-radius: 10px;padding: 20px;}.todo br {display: none;}.titleTag {text-align: center;margin-top: 20px;display: inline-block;width: 20%;height: 30px;border-radius: 10px;background-color: rgb(87, 183, 121);color: #fff;}.titleTag input {width: 40px;height: 28px;border: none;background-color: rgb(87, 183, 121);border-radius: 10px;color: #fff;text-align: center;}input {outline: none;}.ymcontent {display: inline-block;width: 78%;height: 28px;}.ymcontent input {width: 90%;height: 28px;border: 1px solid rgb(87, 183, 121);border-radius: 10px;}.clear {margin-left: 10px;display: inline-block;width: 18px;height: 18px;background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAOQSURBVDhPRVNviFRVFP/d+96b93Z2ZvbPbNPmVrAKQeiaVpiRWH4QCsu0CMsPEVaoBCpIRVSwgn0IQkpkQSIL6ksUhEGlQRTWp1AKzexDsEi17u60s+7O25nZ9+/2O/dNdYY37757zv2d8zvnd5WhoWvvnzuMybnz6C/W8NCag7h9ZFPXk9uVa9/h299PoJ02sGroXuxY80bXA1igKF7GkxMlFPwAlXKANM0w12zg6Y1H8dhdr9rAz346gk8ujWN4sIogcBG22nb/7W1z0I5LoMyY7cd8lItlDFR9aA24rkYcZ5iqT2HPfccYnuKjCy9i9OYRFHs1DzLG06jPLiFKlvHOI4twhu6ZHZ/8+zKq1R5WIiwVhK3rKvQGZfw4+SV+nT6HkVoNhSCjD8h7YVDp8xE2IzSjaTgrH9DjMUI4UopShLExFsxj1oIbsAofhYIkkJjcrxkrH0obdDoJtOcWSSNGliqkiUISkwh7lCaw9FwCuK7smW5MninlWiyJFQpOEXr7nfsw27iOKEoZlDGYhxJtwUzGdyKHgCyTx9iqxM/uotM2mJmbwebRvdBb1u7CtvXPYLpeJzqBeECyZZljgQUoI6iA5GBMwN9yW+Hq1DVsWbUP60Z25OOXEk98cRBfXTyFvkoRBfbG8RxOJ4PjSOMdOC7XHIBM1BBwvrmIrbc9j113v2UpssbcBko3sZKU2TWoiP+qk7XQlP6wKK6733T2F2/pnu4CvXvmdUycfQWlngoHx4ayJ4ZpMzZfgKVmATEEsdP0NQYqffjw/CGcvnjUAqnvL502hz54FCuqNY5bkQ6pOKTiJZaSdkjH4/QsPRFrLkaJlcr+qP+F17Z+A6d3rD6+FDV4mBHURVdOVieKk1GUsdayz03uSSK7phV8B652Mb/0J3SzvcCaHTsZXhc+MjF5C2vRDXtCikJJEhjRksiB10b65LH5YbQAvXJ4DHJpjRGAfPTSExmxiK3ZCrHYDLnO+2NHLP9MJHFhGOHWvjugWp3QbH65hMH+AaK7VLJmuaTmGsy363hqw0tI1TI+//k4VtRuhB8YKwOP8gjDDtrxAt7b3cp11FiYwYNHhlEuFdHj+1Dsw2LrOh7fsB8HHp6wNRw/8yy+vnIKw9Ub7B3sxHLz2zi5exalYPB/QUZxB29+uhdXG7/QUcbOjS/g/tVPWJB/7YffPsbZyycRo4XRoTE8t2mCgvXoAf4BgNXKTxCeOB0AAAAASUVORK5CYII=) no-repeat;vertical-align: -3px;}.titleTag .monthL {width: 16px;padding: 0;}.weekN {display: inline-block;}.week {text-align: center;}.week .titleTag {width: 96%;margin-right: 38px;}.week .date {width: 163px;height: 28px;display: inline-block;text-align: right;}.post-block .weekUl {margin-top: 10px;padding: 0;width: 100%;height: 280px;}.todo .week .weekUl li {list-style: none;height: 35px;width: 100%;text-align: left;}.todo .week .weekUl li span {text-align: center;color: rgb(87, 183, 121);display: inline-block;width: 20%;}.todo .week .weekUl li input {width: 70%;height: 28px;border: 1px solid rgb(87, 183, 121);border-radius: 10px;}.w100 {width: 96%;margin-right: 38px;margin-top: 20px;}.l30 {width: 30%;text-decoration: none;}.lr20 {margin: 0 14px;}.noteList {width: 70%;position: relative;top: -44px;left: 15%;}.todo .notes .noteList li {position: relative;list-style: none;border-bottom: 1px solid rgba(87, 183, 121, 0.5);width: 98%;height:40px;line-height: 40px;margin-left: 80px;padding-bottom: 5px;}.todo .noteLi .destory {display: none;position: absolute;right: -11px;bottom: -18px;width: 40px;height: 40px;margin: auto 0;font-size: 30px;color: #cc9a9a;margin-bottom: 11px;transition: color 0.2s ease-out;border: none;background: transparent;outline:none;}.todo .noteLi .edit{display:none;}.todo .editing{height: 40px;}.todo .editing .view{display:none;}.todo .editing .edit{display:block;border: none;width: 100%;height: 40px;}.todo .noteLi .destory:hover {color: #af5b5e;}.todo .noteLi:hover .destory {display: block;}.noteThing {width: 100%;}.noteThing input {width: 68%;margin-left: 7px;}.gray{text-decoration: line-through;color: #999;}.listEmpty{position: relative;bottom: 20px;left: 40%;}@media (min-width: 0px) and (max-width: 500px) {.ymcontent input {width: 70%;}.week .date {display: none;}}</style></p>
+<p><div class="todo" id="todoList"><br>    <div class="year"><br>        <div class="titleTag"><input type="text" v-model="year">年目标</div><br>        <div class="ymcontent"><br>            <input type="text" class="year_content" v-model="yearContent"><br>            <i class="clear"></i><br>        </div><br>    </div><br>    <div class="month"><br>        <div class="titleTag"><input type="text" v-model="mounth">月任务</div><br>        <div class="ymcontent"><br>            <input type="text" class="month_content" v-model="mounthCentent"><br>            <i class="clear"></i><br>        </div><br>    </div><br>    <div class="week"><br>        <div class="titleTag"><br>            <div class="weekN">第<input type="text" class="monthL" v-model="weekNow">/<input type="text" class="monthL" v-model="weekTotal">周计划</div><br>            <div class="date"><input type="text" class="monthL" v-model="weekMounth1">月<input type="text" class="monthL" v-model="weekDay1">日-<input type="text" class="monthL" v-model="weekMounth2">月<input type="text" class="monthL" v-model="weekDay2">日</div><br>        </div><br>        <ul class="weekUl"><br>            <li><br>                <span>周一</span><br>                <input type="text" v-model="Monday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周二</span><br>                <input type="text" v-model="Tuesday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周三</span><br>                <input type="text" v-model="Wednesday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周四</span><br>                <input type="text" v-model="Thursday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周五</span><br>                <input type="text" v-model="Friday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周六</span><br>                <input type="text" v-model="Saturday"><br>                <i class="clear"></i><br>            </li><br>            <li><br>                <span>周日</span><br>                <input type="text" v-model="Sunday"><br>                <i class="clear"></i><br>            </li><br>        </ul><br>    </div><br>    <div class="titleTag w100">便利贴</div><br>    <div class="notes"><br>        <div class="ymcontent noteThing"><br>            <div class="titleTag">添加事项</div><br>            <input type="text" class="year_content" v-model="todo" @keyup.enter="enterHandle"><br>        </div><br>        <div class="ymcontent noteThing"><br>            <a class="titleTag l30" href="#all" v-show="textArr.length">所有任务<span></span></a><br>            <a class="titleTag l30 lr20" href="#un" v-show="unLength">未完成任务<span></span></a><br>            <a class="titleTag l30" href="#ed" v-show="edLength">已完成任务<span></span></a><br>        </div><br>        <div class="titleTag">任务列表</div><br>        <div v-if="textArr.length"><br>            <ul class="noteList clearFix"><br>                <li v-for="(item,index) in filterTodo" :class="{noteLi:true,gray:item.checked,editing:editing==index}" @dblclick="douLiClick(item.title,index)"><br>                    <div class="view"><br>                        <input type="checkbox" class="toggle" v-model="item.checked"><br>                        <label></label><br>                        <button class="destory" @click="clearHandle(index,item)">x</button><br>                    </div><br>                    <input type="text" class="edit" @keyup.enter="edited(item,index)" @keyup.esc="restoreTodo(item,index)" v-model="item.title" v-focus="editing==index" @blur="edited(item,index)"><br>                </li><br>            </ul><br>        </div><br>        <div v-else class="listEmpty">当前列表为空~</div><br>    </div><br></div></p>
 <script>
-   var vm = new Vue({
-            el: "#todoList",
-            data: {
-                textArr: [{
-                    "title": "学习",
-                    "checked":true
-                },{
-                    "title": "学习",
+   var storage = {
+        get(key){
+            return JSON.parse(window.localStorage.getItem(key));
+        },
+        set(key,value){
+            return window.localStorage.setItem(key,JSON.stringify(value));
+        }
+    }
+    // 上方计划表localStorage
+    var year = storage.get("year") || "";
+    var yearContent = storage.get("yearContent") || "";
+    var mounth = storage.get("mounth") || "";
+    var mounthCentent = storage.get("mounthCentent") || "";
+    var weekNow = storage.get("weekNow") || "";
+    var weekTotal = storage.get("weekTotal") || "";
+    var weekMounth1 = storage.get("weekMounth1") || "";
+    var weekDay1 = storage.get("weekDay1") || "";
+    var weekMounth2 = storage.get("weekMounth2") || "";
+    var weekDay2 = storage.get("weekDay2") || "";
+    var Monday = storage.get("Monday") || "";
+    var Tuesday = storage.get("Tuesday") || "";
+    var Wednesday = storage.get("Wednesday") || "";
+    var Thursday = storage.get("Thursday") || "";
+    var Friday = storage.get("Friday") || "";
+    var Saturday = storage.get("Saturday") || "";
+    var Sunday = storage.get("Sunday") || "";
+    // 上方计划表localStorage   
+    var textArr = storage.get("todo") || [];
+    var filterHash={
+        "all":function(textArr){
+            return textArr;
+        },
+        "un":function(textArr){
+            return textArr.filter(function(item){
+                return !item.checked;
+            })
+        },
+        "ed":function(textArr){
+            return textArr.filter(function(item){
+                return item.checked;
+            })
+        }
+    }
+    // var textArr = [{
+    //     "title":"吃饭",
+    //     "checked":true
+    // },{
+    //     "title":"睡觉",
+    //     "checked":false
+    // },{
+    //     "title":"打豆豆",
+    //     "checked":false
+    // }];
+    var vm = new Vue({
+        el: "#todoList",
+        data: {
+            textArr,
+            todo:"",
+            editing:undefined,
+            beforeTodo:"",
+            thisHash:"all",
+            // 上方计划表localStorage
+            year,
+            yearContent,
+            mounth,
+            mounthCentent,
+            weekNow,
+            weekTotal,
+            weekMounth1,
+            weekDay1,
+            weekMounth2,
+            weekDay2,
+            Monday,
+            Tuesday,
+            Wednesday, 
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+            // 上方计划表localStorage
+        },
+        methods:{
+            enterHandle:function(e){
+                // if(e.target.value !== ""){
+                //     var obj = {
+                //         "title":e.target.value,
+                //         "checked":false
+                //     }
+                //     this.textArr.push(obj);
+                //     e.target.value="";
+                // }
+                this.textArr.push({
+                    "title":this.todo,
                     "checked":false
-                }],
-                visiable:"all"
+                });
+                this.todo = '';
             },
-            methods:{
-                enterHandle:function(e){
-                    if(e.target.value !== ""){
-                        var obj = {
-                            "title":e.target.value,
-                            "checked":false
-                        }
-                        this.textArr.push(obj);
-                        e.target.value="";
+            clearHandle:function(index,item){
+                // console.log(this.textArr.indexOf(item));
+                this.textArr.splice(index,1);
+            },
+            douLiClick:function(title,index){
+                this.editing = index;
+                this.beforeTodo = title;
+            },
+            edited:function(item,index){
+                this.editing = undefined;
+            },
+            restoreTodo:function(item,index){
+                this.textArr.splice(index,1,{
+                    "title":this.beforeTodo,
+                    "checked":item.checked
+                })
+                this.editing = undefined;
+            }
+        },
+        computed:{
+            unLength : function(){
+                return this.textArr.filter(function(item){return !item.checked;}).length;
+            },
+            edLength : function(){
+                return this.textArr.filter(function(item){return item.checked;}).length;
+            },
+            filterTodo:function(){
+              if(!this.thisHash){
+                this.thisHash = "all";
+              }
+              return filterHash[this.thisHash](this.textArr);
+            }
+        },
+        directives:{
+            focus:{
+                update:function(el,binding){
+                    if(binding.value){
+                        el.focus();
                     }
-                },
-                clearHandle:function(index){
-                    this.textArr.splice(index,1);
-                }
-            },
-            computed:{
-                unLength : function(){
-                    return this.textArr.filter(function(item){return !item.checked;}).length;
-                },
-                edLength : function(){
-                    return this.textArr.filter(function(item){return item.checked;}).length;
                 }
             }
-        });
+        },
+        watch:{
+            textArr:function(){//浅层次的监听
+                    storage.set("todo",this.textArr);
+            },
+            textArr:{//深层次的监听
+                deep:true,
+                handler:function(){
+                    storage.set("todo",this.textArr);
+                }
+            },
+            // 上方计划表localStorage
+            year:function(){//浅层次的监听
+                storage.set("year",this.year);
+            },
+            yearContent:function(){
+                storage.set("yearContent",this.yearContent);
+            },
+            mounth:function(){
+                storage.set("mounth",this.mounth);
+            },
+            mounthCentent:function(){
+                storage.set("mounthCentent",this.mounthCentent);
+            },
+            weekNow:function(){
+                storage.set("weekNow",this.weekNow);
+            },
+            weekTotal:function(){
+                storage.set("weekTotal",this.weekTotal);
+            },
+            weekMounth1:function(){
+                storage.set("weekMounth1",this.weekMounth1);
+            },
+            weekDay1:function(){
+                storage.set("weekDay1",this.weekDay1);
+            },
+            weekMounth2:function(){
+                storage.set("weekMounth2",this.weekMounth2);
+            },
+            weekDay2:function(){
+                storage.set("weekDay2",this.weekDay2);
+            },
+            Monday:function(){
+                storage.set("Monday",this.Monday);
+            },
+            Tuesday:function(){
+                storage.set("Tuesday",this.Tuesday);
+            },
+            Wednesday:function(){
+                storage.set("Wednesday",this.Wednesday);
+            }, 
+            Thursday:function(){
+                storage.set("Thursday",this.Thursday);
+            },
+            Friday:function(){
+                storage.set("Friday",this.Friday);
+            },
+            Saturday:function(){
+                storage.set("Saturday",this.Saturday);
+            },
+            Sunday:function(){
+                storage.set("Sunday",this.Sunday);
+            }
+            // 上方计划表localStorage
+        }
+    });
+    function hashChange(){
+        vm.thisHash = window.location.hash.slice(1);
+    }
+    window.addEventListener("hashchange",hashChange);
+    hashChange();
 </script>
+
           
         
       
