@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="记录生活点点滴滴">
+<meta name="description" content="AjaxAjax 是浏览器专门用来和服务器进行交互的异步通讯技术，其核心对象是 XMLHttpRequest，通过该对象可以创建一个 Ajax 请求。Ajax 请求是一个耗时的异步操作，当请求发出以后，Ajax 提供了两个状态位来描述请求在不同阶段的状态，这两个状态位分别是 readyState 和 status ，readyState 通过 5个状态码来描述一个请求的 5 个阶段： 0 - 请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajax">
 <meta property="og:url" content="http://yoursite.com/2019/11/26/ajax/index.html">
 <meta property="og:site_name" content="纪鹏">
-<meta property="og:description" content="记录生活点点滴滴">
+<meta property="og:description" content="AjaxAjax 是浏览器专门用来和服务器进行交互的异步通讯技术，其核心对象是 XMLHttpRequest，通过该对象可以创建一个 Ajax 请求。Ajax 请求是一个耗时的异步操作，当请求发出以后，Ajax 提供了两个状态位来描述请求在不同阶段的状态，这两个状态位分别是 readyState 和 status ，readyState 通过 5个状态码来描述一个请求的 5 个阶段： 0 - 请求">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-26T08:57:08.684Z">
+<meta property="og:updated_time" content="2019-11-26T09:41:04.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax">
-<meta name="twitter:description" content="记录生活点点滴滴">
+<meta name="twitter:description" content="AjaxAjax 是浏览器专门用来和服务器进行交互的异步通讯技术，其核心对象是 XMLHttpRequest，通过该对象可以创建一个 Ajax 请求。Ajax 请求是一个耗时的异步操作，当请求发出以后，Ajax 提供了两个状态位来描述请求在不同阶段的状态，这两个状态位分别是 readyState 和 status ，readyState 通过 5个状态码来描述一个请求的 5 个阶段： 0 - 请求">
 
 
 
@@ -328,7 +328,13 @@
       
 
       
-        
+        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 是浏览器专门用来和服务器进行交互的异步通讯技术，其核心对象是 XMLHttpRequest，通过该对象可以创建一个 Ajax 请求。Ajax 请求是一个耗时的异步操作，当请求发出以后，Ajax 提供了两个状态位来描述请求在不同阶段的状态，这两个状态位分别是 readyState 和 status ，readyState 通过 5个状态码来描述一个请求的 5 个阶段：</p>
+<p>0 - 请求未发送，初始化阶段<br>1 - 请求发送中，服务器还未收到请求<br>2 - 请求发送成功，服务器已收到请求<br>3 - 服务器处理完成，开始响应请求，传输数据<br>4 - 客户端收到请求，并完成了数据下载，生成了响应对象<br>status 用于描述服务端对请求处理的情况，200 表示正确响应了请求，404 表示服务器找不到资源，500 代表服务器内部异常等等。</p>
+<p>Ajax 对象还可以设置一个 timeout 值，代表超时时间。切记：timeout 只会影响 readyState，而不会影响 status，因为超时只会中断数据传输，但不会影响服务器的处理结果。 如果 timeout 设置的不合理，就会导致响应码 status 是 200，但 response里却没有数据，这种情况就是服务器正确响应了请求，但数据的下载被超时中断了。</p>
+<p>为了保证用户信息的安全，浏览器引入了同源策略，对脚本请求做了限制，不允许 Ajax 跨域请求服务器 ，只允许请求和当前地址同域的服务器资源。但不限制 HTML 标签发送跨域请求，比如 script、img、a 标签等，因此可以利用标签跨域能力来实现跨域请求，这就是 JSONP 能够跨域的原理。</p>
+<p>JSONP 虽然可以解决跨域问题，但只能发送 GET 请求，并且没有有效的错误捕获机制 。为了解决这个问题，W3C 在 XMLHttpRequest Level2 中提出了 CORS 规范，即 “跨域资源共享”。它不是一个新的 API，而是一个标准规范 。当浏览器发现该请求需要跨域时，就会自动在头信息中添加一个 Origin 字段，用以说明本次请求来自哪个源。服务器根据这个值，决定是否同意这次请求。 关于 CORS 的详细介绍请参考：跨域资源共享 CORS 详解 </p>
+<p>随着移动端的快速发展，Web 技术的应用场景正在变得越来越复杂，“关注点分离” 原则在系统设计层面就显得越来越重要，而 XMLHttpRequest 是 Ajax 最古老的一个接口，因而不太符合现代化的系统设计理念。因此，浏览器提供了一个新的 Ajax 接口，即 Fetch，Fetch 是基于 ES6 的 Promise 思想设计的，更符合关注点分离原则。关于 Fetch 的更多介绍请参考：传统 Ajax 已死，Fetch 永生</p>
+
       
     </div>
     
@@ -412,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -475,6 +490,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
