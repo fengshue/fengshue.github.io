@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：占据文档位置，再进行移动absolute定位：根据有position定位的父级元素进行定位fixed定位：固定为浏览器窗口 2，什么是事件委托？3，浏览器从加载到渲染的过程，比如输">
+<meta name="description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：相对定位，占据文档位置，再进行移动，相对于出生位置进行定位absolute定位：绝对定位，根据最近有position定位的父级元素进行定位fixed定位：固定定位，相当于浏览器窗口">
 <meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Interiew-questions">
 <meta property="og:url" content="http://yoursite.com/2019/10/14/Interiew-questions/index.html">
 <meta property="og:site_name" content="纪鹏">
-<meta property="og:description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：占据文档位置，再进行移动absolute定位：根据有position定位的父级元素进行定位fixed定位：固定为浏览器窗口 2，什么是事件委托？3，浏览器从加载到渲染的过程，比如输">
+<meta property="og:description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：相对定位，占据文档位置，再进行移动，相对于出生位置进行定位absolute定位：绝对定位，根据最近有position定位的父级元素进行定位fixed定位：固定定位，相当于浏览器窗口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T10:41:59.760Z">
+<meta property="og:updated_time" content="2019-11-26T07:56:51.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Interiew-questions">
-<meta name="twitter:description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：占据文档位置，再进行移动absolute定位：根据有position定位的父级元素进行定位fixed定位：固定为浏览器窗口 2，什么是事件委托？3，浏览器从加载到渲染的过程，比如输">
+<meta name="twitter:description" content="基础知识ES6框架React1、React的生命周期有哪些？ vue微信小程序1，position属性有哪些？分别是如何定位的？position的属性：relative、absolute、fixedrelative定位：相对定位，占据文档位置，再进行移动，相对于出生位置进行定位absolute定位：绝对定位，根据最近有position定位的父级元素进行定位fixed定位：固定定位，相当于浏览器窗口">
 
 
 
@@ -352,10 +352,60 @@
 
       
         <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>1、React的生命周期有哪些？</p>
-<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><h3 id="1，position属性有哪些？分别是如何定位的？"><a href="#1，position属性有哪些？分别是如何定位的？" class="headerlink" title="1，position属性有哪些？分别是如何定位的？"></a>1，position属性有哪些？分别是如何定位的？</h3><p>position的属性：relative、absolute、fixed<br>relative定位：占据文档位置，再进行移动<br>absolute定位：根据有position定位的父级元素进行定位<br>fixed定位：固定为浏览器窗口</p>
-<h3 id="2，什么是事件委托？"><a href="#2，什么是事件委托？" class="headerlink" title="2，什么是事件委托？"></a>2，什么是事件委托？</h3><h3 id="3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"><a href="#3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？" class="headerlink" title="3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"></a>3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？</h3><h3 id="4，react生命周期有哪些？"><a href="#4，react生命周期有哪些？" class="headerlink" title="4，react生命周期有哪些？"></a>4，react生命周期有哪些？</h3><h3 id="5，代码输出题"><a href="#5，代码输出题" class="headerlink" title="5，代码输出题"></a>5，代码输出题</h3><p>let promise = new Promise((resolve, reject) =&gt; {<br>  console.log(‘Promise’);<br>  resolve();<br>});<br>promise.then(() =&gt; {<br>  console.log(‘resolved’);<br>});<br>console.log(‘Hi’);</p>
-<h3 id="6，手写代码题："><a href="#6，手写代码题：" class="headerlink" title="6，手写代码题："></a>6，手写代码题：</h3><p>字符串中出现次数最多的字符？<br>    var str = ‘abcdaaaaaa’;<br>    console.log(num, char);</p>
-<h3 id="7，手写代码题："><a href="#7，手写代码题：" class="headerlink" title="7，手写代码题："></a>7，手写代码题：</h3><p>如何实现数组的随机排序？</p>
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><h3 id="1，position属性有哪些？分别是如何定位的？"><a href="#1，position属性有哪些？分别是如何定位的？" class="headerlink" title="1，position属性有哪些？分别是如何定位的？"></a>1，position属性有哪些？分别是如何定位的？</h3><p>position的属性：relative、absolute、fixed<br>relative定位：相对定位，占据文档位置，再进行移动，相对于出生位置进行定位<br>absolute定位：绝对定位，根据最近有position定位的父级元素进行定位<br>fixed定位：固定定位，相当于浏览器窗口进行定位，在父级元素下方出生<br>static定位：默认值，没有定位<br>inherit定位：继承父极的position定位</p>
+<h3 id="2，什么是事件委托？"><a href="#2，什么是事件委托？" class="headerlink" title="2，什么是事件委托？"></a>2，什么是事件委托？</h3><p>子元素利用冒泡的原理，把事件加到父级上，触发执行效果。</p>
+<h3 id="3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"><a href="#3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？" class="headerlink" title="3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"></a>3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？</h3><p>1.创建Document对象，开始解析web页面。解析HTML元素和他们的文本内容后添加Element对象和Text节点到文档中，<br>这个阶段document.readyState = ‘loading’。<br>2.遇到link外部css,创建线程加载，并继续解析文档。<br>3.遇到script外部js，并且没有设置async、defer，浏览器加载，并阻塞，等js加载完成并执行该脚本，并继续加载文档。<br>4.遇到script外部文件，并且设置有async、defer,浏览器创建线程加载，并继续加载文档。<br>对于async属性的脚本，脚本加载完成后立即执行。（异步禁止使用document.write()）<br>5.遇到img等，先正常解析dom结构，然后浏览器异步加载src,并继续解析文档。<br>6.当文档解析完成，document.readyState = ‘interactive’。（document.onreadystatechage()）<br>7.文档解析完成后，所有设置有defer的脚本会按照顺序执行。（注意与async的不同，但同样禁止使用documen.write()）<br>8.document对象触发DOMContentloaded事件，这也标志着程序执行从同步脚本执行阶段，转化为事件驱动阶段。<br>（document.addElementListener）<br>9.当所有async的脚本加载完成并执行后、img等加载完成后，document.readyState = ‘complete’,window对象触发load事件。<br>10.从此，以异步响应方式处理用户输入、网络事件等。</p>
+<h3 id="4，react生命周期有哪些？"><a href="#4，react生命周期有哪些？" class="headerlink" title="4，react生命周期有哪些？"></a>4，react生命周期有哪些？</h3><p>componentWillMount<br>componentDidMount<br>componentDidState<br>render<br>shouldComponentUpdate<br>componentWillUpdate</p>
+<h3 id="5，代码输出题"><a href="#5，代码输出题" class="headerlink" title="5，代码输出题"></a>5，代码输出题</h3><p>let promise = new Promise((resolve, reject) =&gt; {<br>  console.log(‘Promise’);<br>  resolve();<br>});<br>promise.then(() =&gt; {<br>  console.log(‘resolved’);<br>});<br>console.log(‘Hi’);</p>
+<p>分别输出Promise、Hi、resolved</p>
+<h3 id="6，手写代码题："><a href="#6，手写代码题：" class="headerlink" title="6，手写代码题："></a>6，手写代码题：</h3><p>字符串中出现次数最多的字符？<br>    var str = ‘abcdaaaaaa’;<br>    console.log(num, char);<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> mu(str) &#123;</span><br><span class="line">  <span class="keyword">for</span>(var i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(var j = 0; j &lt; str.length; j++)&#123;</span><br><span class="line">      (<span class="keyword">function</span>(j)&#123;</span><br><span class="line">        <span class="keyword">if</span>()</span><br><span class="line">        str[i]</span><br><span class="line">      &#125;)(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(mu(<span class="string">"af3g34 [[] 435"</span>))</span><br></pre></td></tr></table></figure></p>
+<h3 id="7，手写代码题："><a href="#7，手写代码题：" class="headerlink" title="7，手写代码题："></a>7，手写代码题：</h3><p>如何实现数组的随机排序？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2,4,52,1,3,53,23];</span><br><span class="line">arr.sort(<span class="keyword">function</span>(a,b)&#123;</span><br><span class="line">  <span class="built_in">return</span> Math.random() - 0.5;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(arr)</span><br></pre></td></tr></table></figure></p>
+<h2 id="8，-css权重规则是如何计算的？"><a href="#8，-css权重规则是如何计算的？" class="headerlink" title="8， css权重规则是如何计算的？"></a>8， <font color="#e12" size="3"><strong>css权重规则是如何计算的？</strong></font></h2><p>！important  无限<br>行间样式     1000<br>id          100<br>class/伪类/属性 10<br>标签/伪元素  1<br>通配符      0</p>
+<h2 id="9，-改变函数内部this指针的指向函数（bind，apply，call的区别）？"><a href="#9，-改变函数内部this指针的指向函数（bind，apply，call的区别）？" class="headerlink" title="9， 改变函数内部this指针的指向函数（bind，apply，call的区别）？"></a>9， <font color="#e12" size="3"><strong>改变函数内部this指针的指向函数（bind，apply，call的区别）？</strong></font></h2><p>bind    返回一个函数            第一个参数是改变this指向的对象     直接传参</p>
+<p>apply   对函数的直接调用        第一个参数是改变this指向的对象     参数用数组包裹</p>
+<p>call    对函数直接调用          第一个参数是改变this指向的对象     直接传参</p>
+<h2 id="10，-react怎么从虚拟dom中拿出真实dom？"><a href="#10，-react怎么从虚拟dom中拿出真实dom？" class="headerlink" title="10， react怎么从虚拟dom中拿出真实dom？"></a>10， <font color="#e12" size="3"><strong>react怎么从虚拟dom中拿出真实dom？</strong></font></h2><p>React 和 React-Dom 是核心模块<br>React：是核心库，当使用JSX语法时，必须让React 存在当前作用域下<br>React元素：是通过JSX语法创建的在JS中存在的HTML的标签<br>JSX语法：是一种JS和Html组合1的一种混合语法<br>ReactDOM.render:<br>1&gt; 把虚拟的DOM转换成真实的DOM</p>
+<p>2&gt; 把真实的DOM插入到根元素中</p>
+<p>3&gt; ReactDOM 当render渲染时，会把根元素中的所有DOM结构进行替换</p>
+<p>4&gt; 第三个参数是个回调函数，当把真实DOM渲染到页面时，执行这个地方的回调函数</p>
+<p><br><br><br></p>
+<h2 id="11，-代码输出题"><a href="#11，-代码输出题" class="headerlink" title="11， 代码输出题"></a>11， <font color="#e12" size="3"><strong>代码输出题</strong></font></h2><p>setTimeout(() =&gt; {</p>
+<p>  console.log(1);</p>
+<p>});</p>
+<p>new Promise((resolve, reject) =&gt; {</p>
+<p>  console.log(2);</p>
+<p>  resolve(3);</p>
+<p>}).then((val) =&gt; {</p>
+<p>  console.log(val);</p>
+<p>});</p>
+<p>console.log(4);</p>
+<p>答案：2431</p>
+<p><br><br><br></p>
+<h2 id="12，-有以下-2-个判断数组的方法，请分别介绍它们之间的区别和优劣？Object-prototype-toString-call-、-instanceof"><a href="#12，-有以下-2-个判断数组的方法，请分别介绍它们之间的区别和优劣？Object-prototype-toString-call-、-instanceof" class="headerlink" title="12， 有以下 2 个判断数组的方法，请分别介绍它们之间的区别和优劣？Object.prototype.toString.call() 、 instanceof()"></a>12， <font color="#e12" size="3"><strong>有以下 2 个判断数组的方法，请分别介绍它们之间的区别和优劣？Object.prototype.toString.call() 、 instanceof()</strong></font></h2><p>Object.prototype.toString.call()：对所有值类型都好使，但不能精准判断自定义对象，对于自定义对象只会返回[object Object]</p>
+<p>instanceof()：判断一个对象是否为数组，instanceof 会判断这个对象的原型链上是否会找到对应的 Array 的原型，找到返回 true，否则返回 false，但只能用来判断对象类型，原始类型不可以。并且所有对象类型 instanceof Object 都是 true，可以弥补Object.prototype.toString.call()不能判断自定义实例化对象的缺点<br><br><br><br></p>
+<h2 id="13，-手写代码题"><a href="#13，-手写代码题" class="headerlink" title="13， 手写代码题"></a>13， <font color="#e12" size="3"><strong>手写代码题</strong></font></h2><p>获取当前url中的某个参数？</p>
+<p><br><br><br></p>
+<h2 id="14，-es6-新增声明命令let和const有哪些异同？"><a href="#14，-es6-新增声明命令let和const有哪些异同？" class="headerlink" title="14， es6 新增声明命令let和const有哪些异同？"></a>14， <font color="#e12" size="3"><strong>es6 新增声明命令let和const有哪些异同？</strong></font></h2><p>let定义的变量和var类似，但作用域在当前声明的范围内,在一个块级范围里声明一个局部变量。我们可以在声明时初始化它的值,这个语句允许你创建一个变量，使它的作用范围被限制在它所在的代码块。<br>const定义的变量只可初始化一次且作用域内不可被更改，使用前必须初始化,变量只能被赋值一次，然后就不能在被赋值。const语句的作用范围和let语句一样。</p>
+<p><br><br><br></p>
+<h2 id="15：跨域的解决方法"><a href="#15：跨域的解决方法" class="headerlink" title="15：跨域的解决方法"></a>15：跨域的解决方法</h2><ol>
+<li>JSONP跨域</li>
+<li>document.domain </li>
+<li>jquery Ajax实现</li>
+</ol>
+<h2 id="16：了解哪些HTTP状态码"><a href="#16：了解哪些HTTP状态码" class="headerlink" title="16：了解哪些HTTP状态码"></a>16：了解哪些HTTP状态码</h2><p>200 - 请求成功<br>301 - 资源（网页等）被永久转移到其它URL<br>404 - 请求的资源（网页等）不存在<br>500 - 内部服务器错误</p>
+<h2 id="17：get和post的区别-get主要用于哪些方面-post呢"><a href="#17：get和post的区别-get主要用于哪些方面-post呢" class="headerlink" title="17：get和post的区别  get主要用于哪些方面   post呢"></a>17：get和post的区别  get主要用于哪些方面   post呢</h2><ol>
+<li>get是不安全的，数据被放在请求的url中；post的所有操作用户来说都是不可见的</li>
+<li>get传送的数据量少，这主要是因为受url长度限制；post传送的数据量较大，一般被默认不受限制。</li>
+<li>get限制Form表单的数据集的值必须为ASCII字符；post支持整个ISO10646字符集。</li>
+<li>get执行效率比post好。get是form提交的默认方法。</li>
+</ol>
+<h2 id="18：说说ajax过程"><a href="#18：说说ajax过程" class="headerlink" title="18：说说ajax过程"></a>18：说说ajax过程</h2><h2 id="19：用过webpack吗？-说说它有哪些优点"><a href="#19：用过webpack吗？-说说它有哪些优点" class="headerlink" title="19：用过webpack吗？   说说它有哪些优点"></a>19：用过webpack吗？   说说它有哪些优点</h2><ol>
+<li>模块化开发（import，require）</li>
+<li>预处理（Less，Sass，ES6，TypeScript……）</li>
+<li>主流框架脚手架支持（Vue，React，Angular）</li>
+<li>庞大的社区（资源丰富，降低学习成本）</li>
+</ol>
+<h2 id="20：了解es6吗-说一下var和let的区别"><a href="#20：了解es6吗-说一下var和let的区别" class="headerlink" title="20：了解es6吗    说一下var和let的区别"></a>20：了解es6吗    说一下var和let的区别</h2><p>let定义的变量是块级的变量。var定义的变量是全局变量或者函数变量。let定义的变量只对它所在的区域内有效，而var定义的变量范围最少是一个函数之内。函数赋值：可以在声明变量时为变量赋值，也可以后面的代码给变量赋值；如果在定义变量时，没有为变量赋值，编译器会自动为变量赋一个默认值。</p>
 
       
     </div>
@@ -477,7 +527,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">2.</span> <span class="nav-text">ES6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架"><span class="nav-number">3.</span> <span class="nav-text">框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React"><span class="nav-number">3.1.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue"><span class="nav-number">3.2.</span> <span class="nav-text">vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序"><span class="nav-number">3.3.</span> <span class="nav-text">微信小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1，position属性有哪些？分别是如何定位的？"><span class="nav-number">3.3.1.</span> <span class="nav-text">1，position属性有哪些？分别是如何定位的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2，什么是事件委托？"><span class="nav-number">3.3.2.</span> <span class="nav-text">2，什么是事件委托？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"><span class="nav-number">3.3.3.</span> <span class="nav-text">3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4，react生命周期有哪些？"><span class="nav-number">3.3.4.</span> <span class="nav-text">4，react生命周期有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5，代码输出题"><span class="nav-number">3.3.5.</span> <span class="nav-text">5，代码输出题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6，手写代码题："><span class="nav-number">3.3.6.</span> <span class="nav-text">6，手写代码题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7，手写代码题："><span class="nav-number">3.3.7.</span> <span class="nav-text">7，手写代码题：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">2.</span> <span class="nav-text">ES6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架"><span class="nav-number">3.</span> <span class="nav-text">框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React"><span class="nav-number">3.1.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue"><span class="nav-number">3.2.</span> <span class="nav-text">vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序"><span class="nav-number">3.3.</span> <span class="nav-text">微信小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1，position属性有哪些？分别是如何定位的？"><span class="nav-number">3.3.1.</span> <span class="nav-text">1，position属性有哪些？分别是如何定位的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2，什么是事件委托？"><span class="nav-number">3.3.2.</span> <span class="nav-text">2，什么是事件委托？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？"><span class="nav-number">3.3.3.</span> <span class="nav-text">3，浏览器从加载到渲染的过程，比如输入一个网址到显示页面的过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4，react生命周期有哪些？"><span class="nav-number">3.3.4.</span> <span class="nav-text">4，react生命周期有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5，代码输出题"><span class="nav-number">3.3.5.</span> <span class="nav-text">5，代码输出题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6，手写代码题："><span class="nav-number">3.3.6.</span> <span class="nav-text">6，手写代码题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7，手写代码题："><span class="nav-number">3.3.7.</span> <span class="nav-text">7，手写代码题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8，-css权重规则是如何计算的？"><span class="nav-number">3.4.</span> <span class="nav-text">8， css权重规则是如何计算的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9，-改变函数内部this指针的指向函数（bind，apply，call的区别）？"><span class="nav-number">3.5.</span> <span class="nav-text">9， 改变函数内部this指针的指向函数（bind，apply，call的区别）？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10，-react怎么从虚拟dom中拿出真实dom？"><span class="nav-number">3.6.</span> <span class="nav-text">10， react怎么从虚拟dom中拿出真实dom？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11，-代码输出题"><span class="nav-number">3.7.</span> <span class="nav-text">11， 代码输出题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12，-有以下-2-个判断数组的方法，请分别介绍它们之间的区别和优劣？Object-prototype-toString-call-、-instanceof"><span class="nav-number">3.8.</span> <span class="nav-text">12， 有以下 2 个判断数组的方法，请分别介绍它们之间的区别和优劣？Object.prototype.toString.call() 、 instanceof()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13，-手写代码题"><span class="nav-number">3.9.</span> <span class="nav-text">13， 手写代码题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14，-es6-新增声明命令let和const有哪些异同？"><span class="nav-number">3.10.</span> <span class="nav-text">14， es6 新增声明命令let和const有哪些异同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15：跨域的解决方法"><span class="nav-number">3.11.</span> <span class="nav-text">15：跨域的解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16：了解哪些HTTP状态码"><span class="nav-number">3.12.</span> <span class="nav-text">16：了解哪些HTTP状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17：get和post的区别-get主要用于哪些方面-post呢"><span class="nav-number">3.13.</span> <span class="nav-text">17：get和post的区别  get主要用于哪些方面   post呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18：说说ajax过程"><span class="nav-number">3.14.</span> <span class="nav-text">18：说说ajax过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19：用过webpack吗？-说说它有哪些优点"><span class="nav-number">3.15.</span> <span class="nav-text">19：用过webpack吗？   说说它有哪些优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20：了解es6吗-说一下var和let的区别"><span class="nav-number">3.16.</span> <span class="nav-text">20：了解es6吗    说一下var和let的区别</span></a></li></ol></li></ol></div>
             
 
           </div>
