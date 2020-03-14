@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="npm initpackage.json主文件 app.jsnpm start webpack1$ hexo new &amp;lt;title&amp;gt;      //新建一篇博客 –save-dev “”-devgd-g">
+<meta name="description" content="npm init产生 package.jsonnpm start webpack配置npm install webpack -gnpm install webpacknpm install babel-loader@7  指定版本下载node环境node -v 返回版本号npm是node环境提供的 框架：把模块划分的非常好工程化：把代码合并、压缩、上传cdn: 构建在网络之上的内容分发网络 web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack">
 <meta property="og:url" content="http://yoursite.com/2019/12/07/webpack/index.html">
 <meta property="og:site_name" content="纪鹏">
-<meta property="og:description" content="npm initpackage.json主文件 app.jsnpm start webpack1$ hexo new &amp;lt;title&amp;gt;      //新建一篇博客 –save-dev “”-devgd-g">
+<meta property="og:description" content="npm init产生 package.jsonnpm start webpack配置npm install webpack -gnpm install webpacknpm install babel-loader@7  指定版本下载node环境node -v 返回版本号npm是node环境提供的 框架：把模块划分的非常好工程化：把代码合并、压缩、上传cdn: 构建在网络之上的内容分发网络 web">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-06T14:04:14.018Z">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/webpack/...">
+<meta property="og:updated_time" content="2020-03-14T00:19:17.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
-<meta name="twitter:description" content="npm initpackage.json主文件 app.jsnpm start webpack1$ hexo new &amp;lt;title&amp;gt;      //新建一篇博客 –save-dev “”-devgd-g">
+<meta name="twitter:description" content="npm init产生 package.jsonnpm start webpack配置npm install webpack -gnpm install webpacknpm install babel-loader@7  指定版本下载node环境node -v 返回版本号npm是node环境提供的 框架：把模块划分的非常好工程化：把代码合并、压缩、上传cdn: 构建在网络之上的内容分发网络 web">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/07/webpack/...">
 
 
 
@@ -350,10 +352,76 @@
       
 
       
-        <h1 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h1><p>package.json<br>主文件 app.js<br>npm start</p>
-<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &lt;title&gt;      //新建一篇博客</span><br></pre></td></tr></table></figure>
-<p>–save-dev</p>
-<p>“”<br>-dev<br>g<br>d<br>-g</p>
+        <h1 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h1><p>产生 package.json<br>npm start</p>
+<h1 id="webpack配置"><a href="#webpack配置" class="headerlink" title="webpack配置"></a>webpack配置</h1><p>npm install webpack -g<br>npm install webpack<br>npm install babel-loader@7  指定版本<br>下载node环境<br>node -v 返回版本号<br>npm是node环境提供的</p>
+<p>框架：把模块划分的非常好<br>工程化：把代码合并、压缩、上传<br>cdn: 构建在网络之上的内容分发网络</p>
+<h2 id="webpack-模块"><a href="#webpack-模块" class="headerlink" title="webpack 模块"></a>webpack 模块</h2><h3 id="ES2015-import-语句"><a href="#ES2015-import-语句" class="headerlink" title="ES2015 import 语句"></a>ES2015 import 语句</h3><p>import defaultExport from “module-name”;<br>import * as name from “module-name”;<br>import { export1 } from “module-name”;<br>import { export1 as alias1 } from “module-name”;<br>import { export1 , export2 } from “module-name”;<br>import “module-name”;<br>var promise = import(“module-name”);</p>
+<h3 id="CommonJS-require-语句"><a href="#CommonJS-require-语句" class="headerlink" title="CommonJS require() 语句"></a>CommonJS require() 语句</h3><p>math.js<br>exports.add = function() {    exports导出的功能<br>    var sum = 0, i = 0, args = arguments, l = args.length;<br>    while (i &lt; l) {<br>        sum += args[i++];<br>    }<br>    return sum;<br>};<br>increment.js<br>var add = require(‘math’).add;<br>exports.increment = function(val) {<br>    return add(val, 1);<br>};<br>program.js<br>var inc = require(‘increment’).increment;<br>var a = 1;<br>inc(a); // 2</p>
+<h3 id="AMD-define-和-require-语句"><a href="#AMD-define-和-require-语句" class="headerlink" title="AMD define 和 require 语句"></a>AMD define 和 require 语句</h3><h3 id="css-sass-less-文件中的-import-语句。"><a href="#css-sass-less-文件中的-import-语句。" class="headerlink" title="css/sass/less 文件中的 @import 语句。"></a>css/sass/less 文件中的 @import 语句。</h3><p>@import url;<br>@import url list-of-media-queries;</p>
+<h3 id="样式-url-…-或-HTML-文件-中的图片链接-image-url"><a href="#样式-url-…-或-HTML-文件-中的图片链接-image-url" class="headerlink" title="样式(url(…))或 HTML 文件()中的图片链接(image url)"></a>样式(url(…))或 HTML 文件(<img src="...">)中的图片链接(image url)</h3><h2 id="创建文件：在html中引入"><a href="#创建文件：在html中引入" class="headerlink" title="创建文件：在html中引入"></a>创建文件：在html中引入</h2><ol>
+<li>webpack文件夹</li>
+<li>webpack.config.js</li>
+<li>package.json</li>
+<li>index.html</li>
+<li>src文件夹<ul>
+<li>js文件夹<ul>
+<li>entry.js</li>
+<li>demo.js</li>
+</ul>
+</li>
+<li>css文件夹<ul>
+<li>index.css</li>
+</ul>
+</li>
+<li>img文件夹<ul>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="npm-init-（初始化）"><a href="#npm-init-（初始化）" class="headerlink" title="npm init （初始化）"></a>npm init （初始化）</h2><p>会生成一个package.json文件</p>
+<p>如果npm install</p>
+<h3 id="entry-js"><a href="#entry-js" class="headerlink" title="entry.js"></a>entry.js</h3><p>webpack -w 使文件一直处于监听中<br>引进其他模块必须重新webpack一下<br>使用其他模块必须重新webpack一下<br>引入的模块发生改动也应该重新webpack一下<br>require(‘./demo.js’)</p>
+<p>console.log(“entry.js”);</p>
+<p>const oImg = new Image();<br>oImg.src = ‘./src/img/haha.jpg’;<br>document.body.appendChild(oImg);</p>
+<h3 id="demo-js"><a href="#demo-js" class="headerlink" title="demo.js"></a>demo.js</h3><p>var tool = require(‘./tool.js’);</p>
+<p>module.exports = obj1;<br>var obj = {<br>    init: function () {<br>        //入口函数<br>        var oDiv1 = tool.getDom(‘div1’);<br>        this.bindEvent(oDiv1)<br>    },</p>
+<pre><code>bindEvent: function (dom) {
+    //绑定函数
+    dom.onclick = this.changeColor;
+},
+changeColor: function () {
+    this.style.backgroundColor = &apos;blue&apos;;
+}
+</code></pre><p>}</p>
+<p>module.exports = obj;</p>
+<h3 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h3><script src="./out/index.js"></script>
+
+<h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><p>var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({minimize: true});  压缩代码,基于webpack模块</p>
+<p>module.exports = {<br>    mode: ‘development’,<br>    entry: ‘./src/js/entry.js’,<br>    entry: {index:’./src/js/entry.js’,index1:’./src/js/entry1.js’},   多个文件打包<br>    output: {<br>        filename: ‘index.js’,<br>        filename: ‘[name].js’,<br>        path:__dirname + ‘/out’<br>        // publicPath: ‘out’<br>    }<br>    module: {<br>        rules: [<br>            {test: /.js$/, loader: ‘babel-loader’},    顺序不能写反<br>            {test: /.css$/, use: [‘style-loader’,’css.loader’]},<br>            {test: /.(jpg|png|gif|svg)$/, use: [‘url-loader?name=./[name].[ext]’]},</p>
+<pre><code>    ]
+}
+</code></pre><p>}</p>
+<h2 id="加载器和插件机制"><a href="#加载器和插件机制" class="headerlink" title="加载器和插件机制"></a>加载器和插件机制</h2><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>$ npm install<br>babel-loader babel babel-core  加载js<br>css-loader  style-loader   加载css<br>url-loader  file-loader    加载图片<br>less-loader less –save-dev </p>
+<p>解析什么文件必须引用相关的loader，而且该loader必须下载</p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({minimize: true});<br>var CommonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin(‘common’);<br>var ExtractTextPlugin = require(“extract-text-webpack-plugin”);</p>
+<p>plugins: [uglifyPlugin, CommonsChunkPlugin, new ExtractTextPlugin(“[name].css”)]</p>
+<p>$ npm install extract-text-webpack-plugin –save-dev</p>
+<p>{test: /.css$/, use: ExtractTextPlugin.extract({fallback: ‘style-loader’,use: ‘css-loader’})},</p>
+<link rel="stylesheet" href="./out/index.css">
+
+<p>ReferenceError: webpack is not defined</p>
+<h3 id="css独立打包"><a href="#css独立打包" class="headerlink" title="css独立打包"></a>css独立打包</h3><p>webpack下载不下来：下载插件不好使</p>
+<p>写错了:var webpack = require(‘webpack’)<br>而不是:require(‘webpack’)<br>下载好的包(加载器)放在了package.json里的开发依赖里<br>经过 -s –save-dev 的文件会放在package.json里</p>
+<p>entry里的文件在out文件夹里引用地址不同</p>
+<p>entry打包考虑路径问题</p>
+<p>-g 一般是命令行工具<br>空 一般是一种功能</p>
+<p>模块化打包工具<br>问题：处理图片能力差</p>
+<h3 id="更新包"><a href="#更新包" class="headerlink" title="更新包-"></a>更新包-</h3><p>npm i -g npm-check-updates<br>ncu -u<br>npm install</p>
+<p>const HtmlWebpackPlugin = require(‘html-webpack-plugin’); //通过 npm 安装<br>const webpack = require(‘webpack’); //访问内置的插件<br>const path = require(‘path’);</p>
+<p>const config = {<br>  entry: ‘./path/to/my/entry/file.js’,<br>  output: {<br>    filename: ‘my-first-webpack.bundle.js’,<br>    path: path.resolve(__dirname, ‘dist’)<br>  },<br>  module: {<br>    rules: [<br>      {<br>        test: /.(js|jsx)$/,<br>        use: ‘babel-loader’<br>      }<br>    ]<br>  },<br>  plugins: [<br>    new webpack.optimize.UglifyJsPlugin(),<br>    new HtmlWebpackPlugin({template: ‘./src/index.html’})<br>  ]<br>};</p>
+<p>module.exports = config;</p>
 
       
     </div>
@@ -469,7 +537,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-init"><span class="nav-number">1.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack"><span class="nav-number">2.</span> <span class="nav-text">webpack</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-init"><span class="nav-number">1.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack配置"><span class="nav-number">2.</span> <span class="nav-text">webpack配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-模块"><span class="nav-number">2.1.</span> <span class="nav-text">webpack 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES2015-import-语句"><span class="nav-number">2.1.1.</span> <span class="nav-text">ES2015 import 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-require-语句"><span class="nav-number">2.1.2.</span> <span class="nav-text">CommonJS require() 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD-define-和-require-语句"><span class="nav-number">2.1.3.</span> <span class="nav-text">AMD define 和 require 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-sass-less-文件中的-import-语句。"><span class="nav-number">2.1.4.</span> <span class="nav-text">css/sass/less 文件中的 @import 语句。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式-url-…-或-HTML-文件-中的图片链接-image-url"><span class="nav-number">2.1.5.</span> <span class="nav-text">样式(url(…))或 HTML 文件()中的图片链接(image url)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建文件：在html中引入"><span class="nav-number">2.2.</span> <span class="nav-text">创建文件：在html中引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init-（初始化）"><span class="nav-number">2.3.</span> <span class="nav-text">npm init （初始化）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#entry-js"><span class="nav-number">2.3.1.</span> <span class="nav-text">entry.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo-js"><span class="nav-number">2.3.2.</span> <span class="nav-text">demo.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-html"><span class="nav-number">2.3.3.</span> <span class="nav-text">index.html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">2.3.4.</span> <span class="nav-text">webpack.config.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载器和插件机制"><span class="nav-number">2.4.</span> <span class="nav-text">加载器和插件机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">2.4.1.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">2.4.2.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css独立打包"><span class="nav-number">2.4.3.</span> <span class="nav-text">css独立打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新包"><span class="nav-number">2.4.4.</span> <span class="nav-text">更新包-</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

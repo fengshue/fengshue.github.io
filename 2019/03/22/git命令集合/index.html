@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="git是什么？请看git官网（https://git-scm.com/）上的简介。（Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.Git">
+<meta name="description" content="git是什么？版本控制系统请看git官网（https://git-scm.com/）上的简介。Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。Git易于学习，占地面积小，具有闪电般快速的性能。 它超越了Subversion，CVS，Perforce和ClearCase等SCM工具，具有廉价本地分支，便捷的临时区域和多个工作流程等功能。） 简言之，git是当下">
 <meta name="keywords" content="git命令集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令集合">
 <meta property="og:url" content="http://yoursite.com/2019/03/22/git命令集合/index.html">
 <meta property="og:site_name" content="纪鹏">
-<meta property="og:description" content="git是什么？请看git官网（https://git-scm.com/）上的简介。（Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.Git">
+<meta property="og:description" content="git是什么？版本控制系统请看git官网（https://git-scm.com/）上的简介。Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。Git易于学习，占地面积小，具有闪电般快速的性能。 它超越了Subversion，CVS，Perforce和ClearCase等SCM工具，具有廉价本地分支，便捷的临时区域和多个工作流程等功能。） 简言之，git是当下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-19T12:45:22.242Z">
+<meta property="og:updated_time" content="2020-03-03T10:19:20.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令集合">
-<meta name="twitter:description" content="git是什么？请看git官网（https://git-scm.com/）上的简介。（Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.Git">
+<meta name="twitter:description" content="git是什么？版本控制系统请看git官网（https://git-scm.com/）上的简介。Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。Git易于学习，占地面积小，具有闪电般快速的性能。 它超越了Subversion，CVS，Perforce和ClearCase等SCM工具，具有廉价本地分支，便捷的临时区域和多个工作流程等功能。） 简言之，git是当下">
 
 
 
@@ -351,10 +351,8 @@
       
 
       
-        <p>git是什么？<br>请看git官网（<a href="https://git-scm.com/）上的简介。" target="_blank" rel="noopener">https://git-scm.com/）上的简介。</a><br>（Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.<br>Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.翻译：Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。Git易于学习，占地面积小，具有闪电般快速的性能。 它超越了Subversion，CVS，Perforce和ClearCase等SCM工具，具有廉价本地分支，便捷的临时区域和多个工作流程等功能。）</p>
-<font color="red ">简言之，git是当下流行的版本控制系统。</font>
-
-<ol>
+        <h2 id="git是什么？"><a href="#git是什么？" class="headerlink" title="git是什么？"></a>git是什么？</h2><p>版本控制系统<br>请看git官网（<a href="https://git-scm.com/）上的简介。" target="_blank" rel="noopener">https://git-scm.com/）上的简介。</a><br>Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。Git易于学习，占地面积小，具有闪电般快速的性能。 它超越了Subversion，CVS，Perforce和ClearCase等SCM工具，具有廉价本地分支，便捷的临时区域和多个工作流程等功能。）</p>
+<h2 id="简言之，git是当下流行的版本控制系统。"><a href="#简言之，git是当下流行的版本控制系统。" class="headerlink" title="简言之，git是当下流行的版本控制系统。"></a>简言之，git是当下流行的版本控制系统。</h2><ol>
 <li><strong>windows快捷键</strong><br>【git常见问题】fatal: Not a valid object name: ‘master’.<br>创建本地分支：git branch dev</li>
 </ol>
 <p>报错：fatal: Not a valid object name: ‘master’.</p>
@@ -368,6 +366,52 @@
 <ol start="2">
 <li><strong>往别人的github上推项目</strong><br>1.git init初始化本地仓库<br>2.git remote add origin <a href="https://github.com/AronJava/hackathon.git远程关联" target="_blank" rel="noopener">https://github.com/AronJava/hackathon.git远程关联</a><br>3.创建本地分支 git add .<br>git commit -m “xxx”<br>此时本地有了master分支<br>git branch  jyy创建自己的分支<br>git checkout jyy切换到自己的分支<br>git push -u origin jyy将本地jyy分支推向远程，远程会自动创建jyy分支</li>
 </ol>
+<h2 id="git仓库"><a href="#git仓库" class="headerlink" title="git仓库"></a>git仓库</h2><p>工作区\缓存区\仓库</p>
+<p>git init</p>
+<p>git config –global user.name jipeng</p>
+<p>git config –global user.email <a href="mailto:2738406604@qq.com" target="_blank" rel="noopener">2738406604@qq.com</a></p>
+<p>git config  user.name jipeng</p>
+<p>git add index.html      1.0版本</p>
+<p>git commit -m ‘once’</p>
+<p>git stutas   看文件的状态</p>
+<p>git diff   比较工作区和缓存区,看文件具体修改了哪里</p>
+<p>git diff –cached   比较缓存区和仓库区</p>
+<p>git diff HEAD    比较工作区和仓库区</p>
+<p>git add .      2.0版本</p>
+<p>git commit -m ‘two’</p>
+<p>git reset –hard Head^^ 回滚到前2个版本<br>git reset –hard Head~100<br>git reset –hard ea1bd55  回滚到指定版本号</p>
+<p>git reflog     查看提交的所有操作</p>
+<p>git log</p>
+<p>git checkout – index.css    缓存区覆盖工作区<br>git reset HEAD          仓库区覆盖缓存区<br>git checkout HEAD index.css    仓库区覆盖缓存区和工作区</p>
+<p>git rm index.html        删除文件</p>
+<p>git branch dev 创建新分支</p>
+<p>git checkout dev  切换</p>
+<p>git merge         合并</p>
+<h2 id="版本回滚"><a href="#版本回滚" class="headerlink" title="版本回滚"></a>版本回滚</h2><p> 分针是非常高效的<br> dev分支   —&gt;   master</p>
+<h2 id="git上传"><a href="#git上传" class="headerlink" title="git上传"></a>git上传</h2><p> Settings<br> SSH and GPS keys<br> 查看github官网，产生一个密匙</p>
+<p> 密匙会放在用户文件夹之下的.ssh里</p>
+<p> git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:fengshue/webpack1.git   连接</p>
+<p> git clone 仓库地址</p>
+<p> github项目里branch创建新分支</p>
+<p> git push origin master:jipeng</p>
+<p> git checkout –track origin/jipeng</p>
+<p> git push origin jipeng: master</p>
+<p> git pull origin master</p>
+<p> git push origin jipeng: jipeng</p>
+<p> 大公司new pull request  </p>
+<h2 id="往github上传项目"><a href="#往github上传项目" class="headerlink" title="往github上传项目"></a>往github上传项目</h2><p> 新建文本文档：.gitignore<br> 内容为：/node_modules<br> 会自动忽略node_modules文件夹</p>
+<p>git init<br>npm init</p>
+<p>与远程仓库建立连接遇到错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: src refspec master does not match any</span><br><span class="line">error: failed to push some refs to </span><br><span class="line"><span class="string">'git@github.com:fengshue/musicplayer.git'</span></span><br></pre></td></tr></table></figure></p>
+<p>解决办法：<br>touch README<br>git add README<br>git commit -m ‘first commit’<br>git push origin master</p>
+<p>1、在github上创建项目</p>
+<p>2、使用git clone <a href="https://github.com/xxxxxxx/xxxxx.git克隆到本地" target="_blank" rel="noopener">https://github.com/xxxxxxx/xxxxx.git克隆到本地</a></p>
+<p>3、编辑项目</p>
+<p>4、git add . （将改动添加到暂存区）</p>
+<p>5、git commit -m “提交说明”</p>
+<p>6、git push origin master 将本地更改推送到远程master分支。</p>
+<p>这样你就完成了向远程仓库的推送。</p>
+<p>如果在github的remote上已经有了文件，会出现错误。此时应当先pull一下，即：<br>git pull origin master<br>然后再进行：<br>git push origin master</p>
+<p>创建github网址：可以在网上搜索到</p>
 
       
     </div>
@@ -462,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -480,7 +533,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,6 +578,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git是什么？"><span class="nav-number">1.</span> <span class="nav-text">git是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简言之，git是当下流行的版本控制系统。"><span class="nav-number">2.</span> <span class="nav-text">简言之，git是当下流行的版本控制系统。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git仓库"><span class="nav-number">3.</span> <span class="nav-text">git仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回滚"><span class="nav-number">4.</span> <span class="nav-text">版本回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git上传"><span class="nav-number">5.</span> <span class="nav-text">git上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#往github上传项目"><span class="nav-number">6.</span> <span class="nav-text">往github上传项目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="2、时隔半年，再次拾起博客，物是人非，要把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立">
+<meta name="description" content="2、把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立新的SSH key    5）ssh">
 <meta name="keywords" content="一个前端工作者的自我修养">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客搭建全记录">
 <meta property="og:url" content="http://yoursite.com/2019/09/20/Hexo博客搭建全记录/index.html">
 <meta property="og:site_name" content="纪鹏">
-<meta property="og:description" content="2、时隔半年，再次拾起博客，物是人非，要把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立">
+<meta property="og:description" content="2、把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立新的SSH key    5）ssh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-20T15:39:49.061Z">
+<meta property="og:updated_time" content="2020-02-28T08:00:36.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建全记录">
-<meta name="twitter:description" content="2、时隔半年，再次拾起博客，物是人非，要把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立">
+<meta name="twitter:description" content="2、把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。    1）git –config user.name ‘xxx’    2) git –config user.email ‘xxx’    3) ssh-keygen -t rsa -C  &amp;#39;xxx@qq.com‘    4)之后在github中建立新的SSH key    5）ssh">
 
 
 
@@ -351,7 +351,20 @@
       
 
       
-        <p>2、时隔半年，再次拾起博客，物是人非，要把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。<br>    1）git –config user.name ‘xxx’<br>    2) git –config user.email ‘xxx’<br>    3) ssh-keygen -t rsa -C  <a href="mailto:&#39;xxx@qq.com" target="_blank" rel="noopener">&#39;xxx@qq.com</a>‘<br>    4)之后在github中建立新的SSH key<br>    5）ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>    在第五步的时候需要到了一个问题：ssh: connect to host github.com port 22: Connection timed out。<br>    所以在.ssh文件加下，新建了config文件用于修改端口号，文件内容如下：<br>        Host github.com<br>        User <a href="mailto:2544531706@163.com" target="_blank" rel="noopener">2544531706@163.com</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443</p>
+        <p>2、把博客重新在各种新装备中重新搭建起来，好在之前在硬盘中存了数据，直接本地电脑连接github即可。<br>    1）git –config user.name ‘xxx’<br>    2) git –config user.email ‘xxx’<br>    3) ssh-keygen -t rsa -C  <a href="mailto:&#39;xxx@qq.com" target="_blank" rel="noopener">&#39;xxx@qq.com</a>‘<br>    4)之后在github中建立新的SSH key<br>    5）ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>    在第五步的时候需要到了一个问题：ssh: connect to host github.com port 22: Connection timed out。<br>    所以在.ssh文件加下，新建了config文件用于修改端口号，文件内容如下：<br>        Host github.com<br>        User <a href="mailto:2544531706@163.com" target="_blank" rel="noopener">2544531706@163.com</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443</p>
+<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><p>npm install hexo-cli -g<br>hexo init fengshue</p>
+<p>npm install</p>
+<p>修改config.yml配置、</p>
+<p>hexo g</p>
+<p>hexo d</p>
+<p>npm install hexo-deployer-git –save</p>
+<p>hexo s</p>
+<p>hexo new ‘one’ </p>
+<p># </p>
+<p>## </p>
+<p>hexo 主题</p>
+<p>git clone 主题</p>
+<p>config.yml<br>theme: next</p>
 
       
     </div>
@@ -446,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -464,7 +486,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -509,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#博客"><span class="nav-number">1.</span> <span class="nav-text">博客</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

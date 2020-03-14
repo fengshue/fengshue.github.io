@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="es6块级作用域()、{}都是 变量var let const letfor(let i = 0; i &amp;lt; 1000; i++){    let i = 0;    console.log(111111)} const内存地址不可改变 解构赋值1234var [a,[b,c]] = [1,[2,3]];var [a=1,b=2,c=3] = [];var [a=1,b=2,c=3] = [n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6">
+<meta property="og:url" content="http://yoursite.com/2020/02/08/es6/index.html">
+<meta property="og:site_name" content="纪鹏">
+<meta property="og:description" content="es6块级作用域()、{}都是 变量var let const letfor(let i = 0; i &amp;lt; 1000; i++){    let i = 0;    console.log(111111)} const内存地址不可改变 解构赋值1234var [a,[b,c]] = [1,[2,3]];var [a=1,b=2,c=3] = [];var [a=1,b=2,c=3] = [n">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-14T14:08:14.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6">
+<meta name="twitter:description" content="es6块级作用域()、{}都是 变量var let const letfor(let i = 0; i &amp;lt; 1000; i++){    let i = 0;    console.log(111111)} const内存地址不可改变 解构赋值1234var [a,[b,c]] = [1,[2,3]];var [a=1,b=2,c=3] = [];var [a=1,b=2,c=3] = [n">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/08/es6/">
+
+
+
+
+
+  <title>es6 | 纪鹏</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">纪鹏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/08/es6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JiPeng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/background17.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="纪鹏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">es6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-08T17:42:04+08:00">
+                2020-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">前端基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h1><p>块级作用域<br>()、{}都是</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>var let const</p>
+<p>let<br>for(let i = 0; i &lt; 1000; i++){<br>    let i = 0;<br>    console.log(111111)<br>}</p>
+<p>const<br>内存地址不可改变</p>
+<p>解构赋值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var [a,[b,c]] = [1,[2,3]];</span><br><span class="line">var [a=1,b=2,c=3] = [];</span><br><span class="line">var [a=1,b=2,c=3] = [null];</span><br><span class="line">var [a,b] = <span class="string">"fc"</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">val</span></span> () &#123;  //惰性赋值( 严格等于undefined时才执行)</span><br><span class="line">    <span class="built_in">return</span> 10</span><br><span class="line">&#125;</span><br><span class="line">var [a = val(),b=2,c=3] = [];</span><br><span class="line"></span><br><span class="line">var &#123; foo, bar &#125; = &#123;</span><br><span class="line">    foo:1,</span><br><span class="line">    bar:2</span><br><span class="line">&#125;</span><br><span class="line">var &#123;a=1,b=2&#125; = &#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> move ([a = 1, b = 2] = []) &#123;</span><br><span class="line">    console.log(111)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> move (&#123;x = 1, y = 2&#125; = &#123;&#125;) &#123; 走第二个赋值</span><br><span class="line">    console.log(x,y)</span><br><span class="line">&#125;</span><br><span class="line">move(&#123;x:3,y:8&#125;)</span><br><span class="line">move(&#123;x:3&#125;)</span><br><span class="line">move(&#123;&#125;)</span><br><span class="line">move()</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> deal(&#123;x,y&#125; = &#123;x:0,y:0&#125;)&#123;   走第二个赋值</span><br><span class="line">    console.log(x,y)</span><br><span class="line">&#125;</span><br><span class="line">deal(&#123;x:3,y:8&#125;)</span><br><span class="line">deal(&#123;x:3&#125;)</span><br><span class="line">deal(&#123;&#125;)       </span><br><span class="line">deal()</span><br></pre></td></tr></table></figure>
+<h2 id="数组的拓展"><a href="#数组的拓展" class="headerlink" title="数组的拓展"></a>数组的拓展</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    0:1,</span><br><span class="line">    1:2,</span><br><span class="line">    length:2,</span><br><span class="line">    push:Array.prototype.push</span><br><span class="line">&#125;</span><br><span class="line">var arr = Array.from(obj);</span><br><span class="line">var arr = Array.from(obj,<span class="keyword">function</span>(item)&#123;</span><br><span class="line">    <span class="built_in">return</span> item + <span class="string">"123"</span></span><br><span class="line">&#125;);</span><br><span class="line">console.log(arr)</span><br></pre></td></tr></table></figure>
+<p>underscorejs.org库</p>
+<p>Array.from([1])        //复制数组<br>new Array(1,2,3)       //创建数组<br>Array.of(1,2,3)        //创建数组<br>arr.copyWithin(0,2,4)  //截取替换</p>
+<p>var num = arr.find(function (item, index,arr) {<br>    return item &gt; 1<br>})</p>
+<p>arr.fill(7，2)   2以后都替换成7<br>arr.keys<br>arr.valueOf()</p>
+<p>var {length} = [1,2,3]</p>
+<p>for (let [index, item] of [‘a’, ‘b’].valueOf()){<br>    alert(index)<br>}</p>
+<p>arr.indexOf(1)<br>arr.includes(1)</p>
+<h2 id="对象的拓展"><a href="#对象的拓展" class="headerlink" title="对象的拓展"></a>对象的拓展</h2><p>var arr=1<br>var obj={<br>    arr,      可以给arr赋值1<br>    a(){},<br>    [prop + “123”]:123<br>}  </p>
+<p>obj.b = 2;<br>var prop = “name”;<br>obj[prop] = “lvp”</p>
+<p>Object.is(NaN,NaN);  是否相等</p>
+<p>Object.assign(target,sourse1，sourse2)  浅拷贝</p>
+<p>纯函数<br>function a(obj){<br>    不可以改变obj<br>}</p>
+<p>Object.keys(obj)  Object.values() Object.entries()<br>Object.setPrototypeOf(obj, obj1);<br>object.getPrototypeOf()</p>
+<p>arr.concat(arr1)  连接</p>
+<p>拓展运算符<br>var arr1 = […arr,1,2,3,…arr]</p>
+<p>rest运算符<br>var [a,…arr] = [1,2,3,4]<br>var {a,…b} = {<br>    a:1,<br>    c:2,<br>    d:2,<br>    e:2<br>}<br>function show(…arr){<br>    console.log(arr)<br>}<br>show(1,2,3,4)</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>var fn = (a) =&gt; {<br>    console.log(arr)<br>}</p>
+<p>var fn = a =&gt; a + 10</p>
+<p>var fn = (a, b) =&gt; ({a:1}) </p>
+<p>var i = v =&gt; ({into:(array) =&gt;<br>({after:(afterpeople)=&gt;<br>{(array.splice(array.indexOf(afterpeople) + 1, 0,value); return array)}})})</p>
+<p>箭头函数的几个注意点<br>1.this指向问题<br>2.不可以当成构造函数<br>3.不可以使用arguments</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"jibing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">hu</span></span> () &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(this.name)</span><br><span class="line"></span><br><span class="line">    &#125;,0)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name:<span class="string">"jipeng"</span></span><br><span class="line">&#125;</span><br><span class="line">hu.call(obj)</span><br></pre></td></tr></table></figure>
+<p>隐式绑定</p>
+<pre><code>var id = 10;
+function fn (){
+    console.log(this.id)
+}
+var obj1 = {
+    id: 30,
+    fn: fn
+} 
+obj1.fn();
+var fn1 = obj1.fn;
+fn1();
+</code></pre><p>显示绑定<br>hu.call(obj)</p>
+<p>硬绑定<br>var hu1 = hu.bind(obj)   this指向以后不能改变</p>
+<h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><p>声明变量的方式<br>    var function let const class import<br>    class person {<br>        constructor() {<br>            this.name = “jipeng”,<br>            this.age = 18<br>        }<br>        eat(){                不可遍历，原型方法<br>            console.log(“eat”)<br>        }<br>    }<br>    var p2 = new person();</p>
+<pre><code>prototype  __proto__  .constructor
+
+
+class person extends father{
+    constructor() {
+        super()    必须写，继承父亲的this
+        this.ovo = &quot;jipeng&quot;,
+        ths.and = 18
+    }
+    static eat () {      静态方法
+        console.log(111)
+    }
+}
+var c = new person();
+
+
+Object.defineProperty(obj,&quot;a&quot;,{
+    value:10,
+    writable : false,  不可写
+    configurable: false,   不可配置
+    enumerable: false,     不可枚举
+
+    get(){
+        return 10000     返回a的值
+    }
+    set(value){      可以对value进行操作
+        return value+10
+    }
+})
+obj.a = 20;
+
+
+class person {
+    constructor() {
+        this.name = &quot;jipeng&quot;,
+        ths.age = 18
+    }
+    get name(){
+    return &quot;cst&quot;
+    }
+    set name(value){
+    }
+}
+obj.name = 10;
+</code></pre><h2 id="Set-和-Map"><a href="#Set-和-Map" class="headerlink" title="Set 和 Map"></a>Set 和 Map</h2><pre><code>var s = new Set();
+var arr = [1,2,1,3,4,57,78,9];
+arr.forEach(function (val){
+    s.add(val)   数组去重
+})
+console.log(s)
+
+var s = new Set(3,4,5,4,4,4,56,5);
+s.size    s的长度
+s.delete(1)
+s.has(1)
+s.clear()
+Array.from(s)  把s转换成数组
+s.keys()
+s.values()
+s.entries()
+
+var m = new Map([[&quot;name&quot;,&quot;llw&quot;],[&quot;age&quot;,10]])
+var m = new Map(s)
+var m1 = new Map(m)
+m1.set(&quot;age&quot;,20)
+</code></pre><h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p> 回调函数<br> 异步编程<br> 事件模型</p>
+<p> 两种状态<br> var p = new Promise(function(resovled, rejected){<br>    if(true){<br>        resovled(“成功”)<br>    }else{<br>        rejected(“失败”)<br>    }<br> });</p>
+<p> p.then(function(){<br>     return new Promise(function(resovled, rejected){<br>         rejected();<br>     })<br> },function(){<br>     console.log(“失败”)<br> }).then(function (){<br>     console.log(“成功”)<br> },function(){<br>     console.log(“失败了”)</p>
+<p> })</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>function ajax (url) {<br>    return new Promise(function (resolved,rejected) {<br>        var xhr = new XMLHttpRequest();<br>        xhr.open(“GET”, url);<br>        xhr.send();<br>        xhr.onreadystatechange = function () {<br>            if(xhr.status == “200” &amp;&amp; xhr.readyState == “4”){<br>                resolved(xhr.responseText);<br>            }else{<br>                rejected(“error”)<br>            }<br>        }<br>    })<br>}<br>ajax().then(function (val){<br>    return ajax(val)<br>    console.log(val)<br>},function (err){<br>    console.log(err)<br>}).then(function(val){</p>
+<p>},function(){}) </p>
+<p>源码简单实现：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> promise(fn)&#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    this.status = <span class="string">"pending"</span>;</span><br><span class="line">    this.data = undefined;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> resolved(val)&#123;</span><br><span class="line">        self.status = <span class="string">"resolved"</span>;</span><br><span class="line">        self.data = val;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> resolved(err)&#123;</span><br><span class="line">        self.status = <span class="string">"rejected"</span>;</span><br><span class="line">        self.data = err;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="lterator-迭代器"><a href="#lterator-迭代器" class="headerlink" title="lterator  迭代器"></a>lterator  迭代器</h2><pre><code>function arrIterator(arr){
+    var index = 0;
+    return {
+        next: function () {
+            return index &lt; arr.length ? {&quot;value&quot; : arr[index] ,done:false} : {value : undefined,done : true}
+        }
+    }
+}
+
+var obj = arrIterator([1,2,3]);
+console.log(obj.next())
+
+var arr = [1,2,3];
+var it = arr[Symbol.iterator]
+console.log(it.next())
+</code></pre><h3 id="第七种数据类型"><a href="#第七种数据类型" class="headerlink" title="第七种数据类型"></a>第七种数据类型</h3><p>var a = Symbol()</p>
+<h2 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator  生成器"></a>Generator  生成器</h2><pre><code>function* fn(){
+    yield &quot;hello&quot;;
+    yield &quot;world&quot;;
+    return &quot;ending&quot;
+}
+obj[Symbol.iterator] = function* fn(){}
+var it = fn();
+for(var item of obj){
+    console.log(item)
+}
+</code></pre><p>function<em> foo(x) {<br>    var y = 2 </em> (yield (x + 1));<br>    var z = yeild (y / 3);<br>    return (x +  y + z);<br>}<br>var it = foo(10);<br>console.log(it.next)</p>
+<p>function *foo(){<br>    yeild 1;<br>    yeild 2;<br>    yeild 3;<br>    yeild 4;<br>    yeild 5;<br>    yeild 6;<br>    yeild 7;<br>}<br>for(let c of foo()){<br>    console.log(v)<br>}</p>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>var obj = require(“./exports.js”)<br>export function add(a, b){<br>    console.log(a+b)<br>}<br>import {a, add} from “./export.js”<br>console.log(a)<br>add(1,2)</p>
+<p>var a = 2;<br>function add(a, b){<br>}</p>
+<p>export {a, add};</p>
+<p>as</p>
+<p>表面   枯槁    繁盛    华丽</p>
+<p>number == number<br>对象 !=对象</p>
+<p>枪枪殊途<br>大枪一杆</p>
+<p>目标之血</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/07/每日总结/" rel="next" title="每日总结">
+                <i class="fa fa-chevron-left"></i> 每日总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/17/jsonp/" rel="prev" title="jsonp">
+                jsonp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/background17.jpg" alt="JiPeng">
+            
+              <p class="site-author-name" itemprop="name">JiPeng</p>
+              <p class="site-description motion-element" itemprop="description">记录生活点点滴滴</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#es6"><span class="nav-number">1.</span> <span class="nav-text">es6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的拓展"><span class="nav-number">1.2.</span> <span class="nav-text">数组的拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的拓展"><span class="nav-number">1.3.</span> <span class="nav-text">对象的拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.4.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">1.5.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-和-Map"><span class="nav-number">1.6.</span> <span class="nav-text">Set 和 Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#promise"><span class="nav-number">1.7.</span> <span class="nav-text">promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.8.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lterator-迭代器"><span class="nav-number">1.9.</span> <span class="nav-text">lterator  迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第七种数据类型"><span class="nav-number">1.9.1.</span> <span class="nav-text">第七种数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator-生成器"><span class="nav-number">1.10.</span> <span class="nav-text">Generator  生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">1.11.</span> <span class="nav-text">模块化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JiPeng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

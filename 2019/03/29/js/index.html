@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="纪鹏">
 <meta property="og:description" content="一、JS基础知识js前序   浏览器：shell和内核   渲染引擎 (html和css)   javascript 引擎 (执行javascript代码)   其他模块    编译性语言   c c++   优点：执行速度快   缺点：跨平台性好   解释型语言   javascript php python   优点：跨平台性好   缺点：执行速度慢    单线程；一个时间这做一件事情">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-06T13:35:42.543Z">
+<meta property="og:updated_time" content="2020-03-13T14:58:32.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="一、JS基础知识js前序   浏览器：shell和内核   渲染引擎 (html和css)   javascript 引擎 (执行javascript代码)   其他模块    编译性语言   c c++   优点：执行速度快   缺点：跨平台性好   解释型语言   javascript php python   优点：跨平台性好   缺点：执行速度慢    单线程；一个时间这做一件事情">
@@ -410,26 +410,19 @@ a++ ++a  a-- --a
 单独+  +&quot;111&quot;=111
 !0  &gt;  &lt; ==
 Boolean(111)
-</code></pre><h4 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h4><h5 id="改变原数组的一些方法"><a href="#改变原数组的一些方法" class="headerlink" title="改变原数组的一些方法"></a>改变原数组的一些方法</h5><p>reverse|sort|push|pop|shift|unshift|splice<br>arr.splice(2,4,”x”,”s”)索引2之后4个被替换<br>arr.sort(function (a,b) {<br>            return a - b   //升序排列<br>            return random() - 0.5   //乱序排列<br>})</p>
+</code></pre><h4 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h4><h5 id="改变原数组的一些方法"><a href="#改变原数组的一些方法" class="headerlink" title="改变原数组的一些方法"></a>改变原数组的一些方法</h5><p>reverse|sort|push|pop|shift|unshift|splice<br>arr.splice(2,4,”x”,”s”)索引2之后4个被替换<br>arr.sort(function (a,b) {<br>            return a - b   //升序排列<br>            return Math.random() - 0.5   //乱序排列<br>})</p>
 <h5 id="不改变原数组的一些方法"><a href="#不改变原数组的一些方法" class="headerlink" title="不改变原数组的一些方法"></a>不改变原数组的一些方法</h5><p>concat|join         //连接/变成字符串<br>split|toString      //字符串方法<br>slice(2,4)          //截取到索引4之前的值</p>
 <h5 id="数组遍历方法"><a href="#数组遍历方法" class="headerlink" title="数组遍历方法"></a>数组遍历方法</h5><p>arr.forEach(function (ele, index){})<br>arr.map(function (ele, index){return “a”})  //有返回值<br>var arr1 = arr.filter(function (ele,index) {<br>    if(index &gt; 2){        //返回数组中你想要的值<br>        return true<br>    }else{<br>        return false<br>    }<br>})<br>arr.reduce(function (prevParma, ele) {<br>    return prevParma       //返回修改后的duyi<br>},duyi)</p>
-<h6 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h6><pre><code>var arr = [1,2,3,43,2,31,1,3,4,3,3,4,4,0];
-const length = arr.length;
-for(var i = 0 ; i &lt; length ; i++){
-    var n = arr[arr.length - 1];
-    console.log(i, arr.length, n, &apos;外层循环&apos;, arr);
-    for(var j = 0;j &lt; arr.length;j++){
-        console.log(j, arr.length, n, arr[j], &apos;内层循环&apos;, arr);
-        if(j &lt; arr.length - 1){
-            if(n === arr[j]){
-                arr.pop();
-                break;
-            }
-        }else{
-            arr.unshift(arr[arr.length - 1]);
-            arr.pop();
+<h6 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h6><p>第一种方法：<br>    var arr = [1,2,3,43,2,31,1,3,4,3,3,4,4,0];<br>    const length = arr.length;<br>    for(var i = 0 ; i &lt; length ; i++){<br>        var n = arr[arr.length - 1];<br>        console.log(i, arr.length, n, ‘外层循环’, arr);<br>        for(var j = 0;j &lt; arr.length;j++){<br>            console.log(j, arr.length, n, arr[j], ‘内层循环’, arr);<br>            if(j &lt; arr.length - 1){<br>                if(n === arr[j]){<br>                    arr.pop();<br>                    break;<br>                }<br>            }else{<br>                arr.unshift(arr[arr.length - 1]);<br>                arr.pop();<br>            }<br>        }<br>    }<br>    console.log(arr)<br>第二种方法：</p>
+<pre><code>var n = arr.length;
+for(var i = 0;i &lt; n;i++){
+    for(var j = 1 ;j &lt; n;j++){
+        if(arr[i] === arr[j]){
+            arr.splice(j,1);
         }
     }
+    arr.push(arr[0]);
+    arr.splice(0,1)
 }
 console.log(arr)
 </code></pre><h5 id="类数组-arguments"><a href="#类数组-arguments" class="headerlink" title="类数组(arguments)"></a>类数组(arguments)</h5><p>var arr = {0:0,1:1,length:4,push:Array.prototype.push}</p>
@@ -552,7 +545,7 @@ renderPage : function(){ //专门显示数据 }
 bindEvent : function(){ //绑定事件 }
 show ; function () {//div点击效果}
 
-for(var prop inobj){
+for(var prop in obj){
     console.log(obj.hasOwnProperty(prop))//是否是自己本身的属性
 }
 A instanceof B  //A的原型链上有没有B的原型
@@ -614,7 +607,6 @@ console.log(obj)
         }else{
             i[prop] = o[prop]
             console.log(&quot;hahahhahhahahafdsjfbhadsf2&quot;)
-
         }
     }
 }
@@ -775,13 +767,17 @@ handle.call(div)
 </ol>
 <h2 id="零散知识点"><a href="#零散知识点" class="headerlink" title="零散知识点"></a><font face="楷体" color="red" size="5">零散知识点</font></h2><h3 id="一、DOCTYPE"><a href="#一、DOCTYPE" class="headerlink" title="一、DOCTYPE"></a>一、DOCTYPE</h3><ol>
 <li>渲染模式：标准模式、混杂模式（怪异模式）</li>
-<li>三种标准模式的写法：<br>1） &lt;!DOCTYPE html&gt;<br>2)  &lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “<a href="http://www.w3.org/TR/html4/strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a><br>3） &lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”<br>“<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a></li>
+<li>三种标准模式的写法：<br>1） &lt;!DOCTYPE html&gt;<br>2)  &lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “<a href="http://www.w3.org/TR/html4/strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a><br>3） &lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”<br>“<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="noopener">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a><br>ice<h3 id="二、for属性-gt-js中表示htmlFor"><a href="#二、for属性-gt-js中表示htmlFor" class="headerlink" title="二、for属性 -&gt; js中表示htmlFor"></a>二、<label>for属性 -&gt; js中表示htmlFor</label></h3>属性映射HTML属性，映射到Element属性<br>img图片预加载<br>byClassName自己定义的写法<br>Math.random和彩票程序（0-36的随机数）</li>
 </ol>
-<h3 id="二、for属性-gt-js中表示htmlFor"><a href="#二、for属性-gt-js中表示htmlFor" class="headerlink" title="二、for属性 -&gt; js中表示htmlFor"></a>二、<label>for属性 -&gt; js中表示htmlFor</label></h3><p>属性映射HTML属性，映射到Element属性<br>img图片预加载<br>byClassName自己定义的写法<br>Math.random和彩票程序（0-36的随机数）</p>
-<h3 id="三、文档碎片"><a href="#三、文档碎片" class="headerlink" title="三、文档碎片"></a>三、文档碎片</h3><p>CDN<br>断电调试<br>typeof(new Array).<strong>proto</strong>.constructor();<br>forEach里不能用break</p>
+<h3 id="三、文档碎片"><a href="#三、文档碎片" class="headerlink" title="三、文档碎片"></a>三、文档碎片</h3><p>var flag = document.createDocumentFragment();<br>CDN<br>断电调试<br>检查错误<br>debugger<br>console.log(111)<br>typeof(new Array).<strong>proto</strong>.constructor();<br>forEach里不能用break</p>
 <p>ajax  async jacascript and xml</p>
 <p>var json = ‘{<br>    “name”:”jipeng”,<br>    “age”:18,<br>    “hooby”:”yundong”<br>}’</p>
 <p>JSON.stringify(json)  //把json变成字符串格式<br>JSON.parse(json)  //把字符串变成json格式</p>
+<p><label for="search"><label></label></label></p>
+<p>&lt;input id = “id”type=”text”&gt;</p>
+<p>&lt;input name=”jipeng”type=”text”&gt;</p>
+<p>标签的特性、属性</p>
+<p>预加载、懒加载</p>
 
       
     </div>
@@ -903,7 +899,7 @@ handle.call(div)
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
