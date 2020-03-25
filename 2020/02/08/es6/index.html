@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="纪鹏">
 <meta property="og:description" content="es6块级作用域()、{}都是 变量var let const letfor(let i = 0; i &amp;lt; 1000; i++){    let i = 0;    console.log(111111)} const内存地址不可改变 解构赋值1234var [a,[b,c]] = [1,[2,3]];var [a=1,b=2,c=3] = [];var [a=1,b=2,c=3] = [n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-14T14:08:14.716Z">
+<meta property="og:updated_time" content="2020-03-24T00:24:51.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6">
 <meta name="twitter:description" content="es6块级作用域()、{}都是 变量var let const letfor(let i = 0; i &amp;lt; 1000; i++){    let i = 0;    console.log(111111)} const内存地址不可改变 解构赋值1234var [a,[b,c]] = [1,[2,3]];var [a=1,b=2,c=3] = [];var [a=1,b=2,c=3] = [n">
@@ -377,7 +377,7 @@
 <h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>var fn = (a) =&gt; {<br>    console.log(arr)<br>}</p>
 <p>var fn = a =&gt; a + 10</p>
 <p>var fn = (a, b) =&gt; ({a:1}) </p>
-<p>var i = v =&gt; ({into:(array) =&gt;<br>({after:(afterpeople)=&gt;<br>{(array.splice(array.indexOf(afterpeople) + 1, 0,value); return array)}})})</p>
+<p>var i = v =&gt; ({into:(array) =&gt;<br>({after:(afterpeople)=&gt;<br>{array.splice(array.indexOf(afterpeople) + 1, 0,value); return array}})})</p>
 <p>箭头函数的几个注意点<br>1.this指向问题<br>2.不可以当成构造函数<br>3.不可以使用arguments</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"jibing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">hu</span></span> () &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(this.name)</span><br><span class="line"></span><br><span class="line">    &#125;,0)</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name:<span class="string">"jipeng"</span></span><br><span class="line">&#125;</span><br><span class="line">hu.call(obj)</span><br></pre></td></tr></table></figure>
 <p>隐式绑定</p>
@@ -462,8 +462,7 @@ var m1 = new Map(m)
 m1.set(&quot;age&quot;,20)
 </code></pre><h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p> 回调函数<br> 异步编程<br> 事件模型</p>
 <p> 两种状态<br> var p = new Promise(function(resovled, rejected){<br>    if(true){<br>        resovled(“成功”)<br>    }else{<br>        rejected(“失败”)<br>    }<br> });</p>
-<p> p.then(function(){<br>     return new Promise(function(resovled, rejected){<br>         rejected();<br>     })<br> },function(){<br>     console.log(“失败”)<br> }).then(function (){<br>     console.log(“成功”)<br> },function(){<br>     console.log(“失败了”)</p>
-<p> })</p>
+<p> p.then(function(){<br>     return new Promise(function(resovled, rejected){<br>         rejected();<br>     })<br> },function(){<br>     console.log(“失败”)<br> }).then(function (){<br>     console.log(“成功”)<br> },function(){<br>     console.log(“失败了”)<br> })</p>
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>function ajax (url) {<br>    return new Promise(function (resolved,rejected) {<br>        var xhr = new XMLHttpRequest();<br>        xhr.open(“GET”, url);<br>        xhr.send();<br>        xhr.onreadystatechange = function () {<br>            if(xhr.status == “200” &amp;&amp; xhr.readyState == “4”){<br>                resolved(xhr.responseText);<br>            }else{<br>                rejected(“error”)<br>            }<br>        }<br>    })<br>}<br>ajax().then(function (val){<br>    return ajax(val)<br>    console.log(val)<br>},function (err){<br>    console.log(err)<br>}).then(function(val){</p>
 <p>},function(){}) </p>
 <p>源码简单实现：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> promise(fn)&#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    this.status = <span class="string">"pending"</span>;</span><br><span class="line">    this.data = undefined;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> resolved(val)&#123;</span><br><span class="line">        self.status = <span class="string">"resolved"</span>;</span><br><span class="line">        self.data = val;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> resolved(err)&#123;</span><br><span class="line">        self.status = <span class="string">"rejected"</span>;</span><br><span class="line">        self.data = err;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -499,10 +498,7 @@ for(var item of obj){
 <p>var a = 2;<br>function add(a, b){<br>}</p>
 <p>export {a, add};</p>
 <p>as</p>
-<p>表面   枯槁    繁盛    华丽</p>
-<p>number == number<br>对象 !=对象</p>
-<p>枪枪殊途<br>大枪一杆</p>
-<p>目标之血</p>
+<p>Number == Number<br>对象 !=对象</p>
 
       
     </div>
