@@ -2400,28 +2400,19 @@ getElementById()    //通过元素Id，唯一性
 <div style="margin-left:32px;">图表、图标icon、动效、矢量图（矢量图缩放不失帧，位图缩 放会失帧，canvas画出的图是位图）</div><br><strong>二、发展历史</strong><br><div style="margin-left:32px;">最早在safari1.3中引入，IE9之前的浏览器不支持canvas。</div><div style="color:red;font-size:11px;margin-left:32px;">提示：<a href="http://caniuse.com，可以测试兼容性。" target="_blank" rel="noopener">http://caniuse.com，可以测试兼容性。</a></div>
 
 <h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><ol>
-<li><p>直线</p>
-<line x1="100" y1="100" x2="200" y2="”100”"></line>
+<li><p>直线<br>&lt; line x1=”100” y1=”100” x2=”200” y2=”100”&gt;&lt; /line&gt;</p>
 </li>
-<li><p>矩形</p>
-<rect x="50" y="50" width="100" height="100"></rect>
+<li><p>矩形<br>&lt; rect x=”50” y=”50” width=”100” height=”100”&gt;&lt; /rect&gt;</p>
 </li>
-<li><p>圆形</p>
-<circle r="50" cx="220" cy="100"></circle>
+<li><p>圆形<br>&lt; circle r=”50” cx=”220” cy=”100”&gt;&lt; /circle&gt;</p>
 </li>
-<li><p>椭圆</p>
-<ellipse rx="100" ry="50" cx="100" cy="200"></ellipse>
+<li><p>椭圆<br>&lt; ellipse rx=”100” ry=”50” cx=”100” cy=”200”&gt;&lt; /ellipse&gt;</p>
 </li>
-<li><p>折线</p>
-<polyline points="60 50, 75 35, 100 50, 125 35, 150 50,
-175 35, 190 50"></polyline>
+<li><p>折线<br>&lt; polyline points=”60 50, 75 35, 100 50, 125 35, 150 50,<br>175 35, 190 50”&gt;&lt; /polyline&gt;</p>
 </li>
-<li><p>多边形</p>
-<polygon points="125 125,130 140,120 140"></polygon>
+<li><p>多边形<br>&lt; polygon points=”125 125,130 140,120 140”&gt;&lt; /polygon&gt;</p>
 </li>
-<li><p>⽂本</p>
-<text x="125" y="220">hello,world</text>
-
+<li><p>⽂本<br>&lt; text x=”125” y=”220”&gt;hello,world&lt; /text&gt;</p>
 </li>
 </ol>
 <h3 id="样式属性"><a href="#样式属性" class="headerlink" title="样式属性"></a>样式属性</h3><ol>
@@ -2435,25 +2426,23 @@ getElementById()    //通过元素Id，唯一性
 </li>
 <li><p>M指令和L指令</p>
 <ul>
-<li><path d="M 10 10 L 20 10">   绝对坐标,相对于svg标签</path></li>
-<li><path d="m 10 10 l 20 10">   相对坐标,相对于前一个点</path></li>
+<li>&lt; path d = “M 10 10 L 20 10” /&gt;   绝对坐标,相对于svg标签</li>
+<li>&lt; path d = “m 10 10 l 20 10” /&gt;   相对坐标,相对于前一个点</li>
 </ul>
 </li>
 <li><p>H和V命令</p>
 <ul>
-<li><path d="M 100 100 H 200 V 200"> 
-</path></li>
+<li>&lt; path d=”M 100 100 H 200 V 200”/&gt; </li>
 </ul>
 </li>
 <li><p>Z命令</p>
 <ul>
-<li><path d="M 100 100 H 200 V 200 z">   闭合路径   注：Z不区分大小写</path></li>
+<li>&lt; path d=”M 100 100 H 200 V 200 z”/&gt;   闭合路径   注：Z不区分大小写</li>
 </ul>
 </li>
 <li><p>圆弧命令<br>A命令  七个参数<br>rx ry x-axis-rotation large-arc-flag sweep-flag x y<br>rx ry 圆弧的x轴半径和y轴半径<br>x-axis-rotation 圆弧相对x轴的旋转角度，默认是顺时针，可以设置负值<br>large-arc-flag 表示圆弧路路径是大圆弧还是小圆弧 1大圆弧<br>sweep-flag 表示从起点到终点是顺时针还是逆时针，1表示顺时针，0表示逆时针<br>x y 表示终点坐标，绝对或相对</p>
 <ul>
-<li><path d="M 100 100 A 70 70 90 1 1 150 200"></path>
-</li>
+<li>&lt; path d=”M 100 100 A 70 70 90 1 1 150 200”&gt;&lt; /path&gt;</li>
 </ul>
 </li>
 </ol>
