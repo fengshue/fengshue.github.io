@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="纪鹏">
 <meta property="og:description" content="jQuery一个优秀的js库，可以先查先用zepto从jQuery演变的 源码初阶123456789101112131415161718192021(function () &amp;#123;    window.jQuery = jQuery;    window.$ = window.jQuery;    function jQuery (selector, content) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-30T02:50:31.352Z">
+<meta property="og:updated_time" content="2020-04-09T03:21:33.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery">
 <meta name="twitter:description" content="jQuery一个优秀的js库，可以先查先用zepto从jQuery演变的 源码初阶123456789101112131415161718192021(function () &amp;#123;    window.jQuery = jQuery;    window.$ = window.jQuery;    function jQuery (selector, content) &amp;#123;">
@@ -330,7 +330,7 @@
       
         <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><p>一个优秀的js库，可以先查先用<br>zepto从jQuery演变的</p>
 <h2 id="源码初阶"><a href="#源码初阶" class="headerlink" title="源码初阶"></a>源码初阶</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    window.jQuery = jQuery;</span><br><span class="line">    window.$ = window.jQuery;</span><br><span class="line">    <span class="keyword">function</span> jQuery (selector, content) &#123;</span><br><span class="line">        <span class="built_in">return</span> new jQuery.prototype.init(selector, content)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    jQuery.prototype.init = <span class="keyword">function</span> (selector, content) &#123;</span><br><span class="line">        var oDom = document.getElementsByTagName(selector);</span><br><span class="line">        <span class="keyword">for</span>(var i = 0;i &lt; oDom.length;i++)&#123;</span><br><span class="line">            this[i] = oDom[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> this;</span><br><span class="line">    &#125;</span><br><span class="line">    jQuery.prototype.eq = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        console.log(9999)</span><br><span class="line">        <span class="built_in">return</span> this;</span><br><span class="line">    &#125;</span><br><span class="line">    jQuery.prototype.init.prototype = jQuery.prototype;</span><br><span class="line">&#125;)()</span><br><span class="line">console.log($(<span class="string">"li"</span>).eq(0));</span><br></pre></td></tr></table></figure>
-<h2 id="如何获取dom"><a href="#如何获取dom" class="headerlink" title="如何获取dom"></a>如何获取dom</h2><p>$(‘div’).eq(0)<br>$(‘.item’, ‘ul)<br>$(‘li:eq(0)’)<br>$(‘li’).length   有几个li<br>$(‘<div></div>‘) 创建一个标签<br>$(‘<div>‘,{html:123,class:”demo”})  给新增的div添加属性<br>$(‘li’,dom/$())</div></p>
+<h2 id="如何获取dom"><a href="#如何获取dom" class="headerlink" title="如何获取dom"></a>如何获取dom</h2><p>$(‘div’).eq(0)<br>$(‘.item’, ‘ul’)<br>$(‘li:eq(0)’)<br>$(‘li’).length   有几个li<br>$(‘<div></div>‘) 创建一个标签<br>$(‘<div>‘,{html:123,class:”demo”})  给新增的div添加属性<br>$(‘li’,dom/$())</div></p>
 <p>$(“ul&gt;li:first”);<br>$(“ul&gt;li:eq(2)”);<br>$(“ul&gt;li:odd/even”);<br>$(“ul&gt;li:last”);<br>$(“li”)[0]</p>
 <p>$(‘li’).filter(function (index) {<br>    return index === 1;<br>    return index % 4 === 0;<br>}).css(“color”,”red”)</p>
 <p>$(‘li’).not(function (index) {<br>    return index === 1;<br>    return index % 4 === 0;<br>}).css(“color”,”red”)</p>
@@ -349,11 +349,11 @@
 <p>$(‘li’).eq(0).next()       下一个兄弟标签</p>
 <p>$(‘li’).addClass(function (index) {<br>    switch (index) {<br>        case 0:<br>            return ‘item’;<br>        case 1:<br>            return ‘item1’;<br>        default:<br>            return ‘item2’;<br>    }<br>})</p>
 <p>$(‘li’).removeClass(function (index) {<br>    switch (index) {<br>        case 0:<br>            return ‘item’;<br>        case 1:<br>            return ‘item1’;<br>        default:<br>            return ‘item2’;<br>    }<br>})</p>
-<p>$(‘.box2’).insertBefore($(‘.box1’))<br>$(‘.box2’).before($(‘.box1’))</p>
+<p>$(‘.box2’).insertBefore($(‘.box1’))<br>$(‘.box2’).before($(‘.box1’))  box2的上面是box1</p>
 <p>$(‘ul’).appendTo($(‘.bottom-1’))<br>$(‘ul’).append($(‘.bottom-1’))    </p>
 <p>$(‘ul’).prepend($(‘.bottom-1’))   ul里的最前面<br>$(‘ul’).prependTo($(‘.bottom-1’))</p>
 <p>$(‘div’).remove()   只会删除元素<br>$(‘div’).detach()   会删除元素上的事件</p>
-<p>$(‘div’).on(‘click’,function() {<br>    console.log(7876)<br>})</p>
+<p>$(‘div’).on(‘click’,function() {    绑定事件<br>    console.log(7876)<br>})</p>
 <p>$(‘ul’).on(‘click’,’li’,function() {<br>    console.log(7876)<br>})</p>
 <p>$(‘li’).off(‘click’)    怎么绑定，怎么解绑<br>scroll     滚轮事件<br>scrollTop  滚出去的距离</p>
 <p>innerWidth<br>outerWidth</p>
