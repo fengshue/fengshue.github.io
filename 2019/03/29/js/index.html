@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="纪鹏">
 <meta property="og:description" content="一、JS基础知识js前序   浏览器：shell和内核   渲染引擎 (html和css)   javascript 引擎 (执行javascript代码)   其他模块    编译性语言   c c++   优点：执行速度快   缺点：跨平台性好   解释型语言   javascript php python   优点：跨平台性好   缺点：执行速度慢    单线程；一个时间这做一件事情">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-14T02:11:19.326Z">
+<meta property="og:updated_time" content="2020-05-14T14:13:22.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="一、JS基础知识js前序   浏览器：shell和内核   渲染引擎 (html和css)   javascript 引擎 (执行javascript代码)   其他模块    编译性语言   c c++   优点：执行速度快   缺点：跨平台性好   解释型语言   javascript php python   优点：跨平台性好   缺点：执行速度慢    单线程；一个时间这做一件事情">
@@ -406,11 +406,12 @@ parseFloat(&quot;12.45AAA&quot;)
 
 隐式类型转换：
 isNaN()
+undefined和{}是NaN
 a++ ++a  a-- --a
 单独+  +&quot;111&quot;=111
 !0  &gt;  &lt; ==
 Boolean(111)
-</code></pre><h4 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h4><h5 id="改变原数组的一些方法"><a href="#改变原数组的一些方法" class="headerlink" title="改变原数组的一些方法"></a>改变原数组的一些方法</h5><p>reverse|sort|push|pop|shift|unshift|splice<br>arr.splice(2,4,”x”,”s”)索引2之后4个被替换<br>arr.sort(function (a,b) {<br>            return a - b   //升序排列<br>            return Math.random() - 0.5   //乱序排列<br>})</p>
+</code></pre><h4 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h4><h5 id="改变原数组的一些方法"><a href="#改变原数组的一些方法" class="headerlink" title="改变原数组的一些方法"></a>改变原数组的一些方法</h5><p>reverse|sort|push|pop|shift|unshift|splice<br>arr.splice(2,4,”x”,”s”)索引2之后4个被替换<br>arr.sort(function (a,b) {<br>    return a - b   //升序排列<br>    return Math.random() - 0.5   //乱序排列<br>})</p>
 <h5 id="不改变原数组的一些方法"><a href="#不改变原数组的一些方法" class="headerlink" title="不改变原数组的一些方法"></a>不改变原数组的一些方法</h5><p>concat|join         //连接/变成字符串<br>split|toString      //字符串方法<br>slice(2,4)          //截取到索引4之前的值</p>
 <h5 id="数组遍历方法"><a href="#数组遍历方法" class="headerlink" title="数组遍历方法"></a>数组遍历方法</h5><p>arr.forEach(function (ele, index){})<br>arr.map(function (ele, index){return “a”})  //有返回值<br>var arr1 = arr.filter(function (ele,index) {<br>    if(index &gt; 2){        //返回数组中你想要的值<br>        return true<br>    }else{<br>        return false<br>    }<br>})<br>arr.reduce(function (prevParma, ele) {<br>    return prevParma       //返回修改后的duyi<br>},duyi)</p>
 <h6 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h6><p>第一种方法：<br>    var arr = [1,2,3,43,2,31,1,3,4,3,3,4,4,0];<br>    const length = arr.length;<br>    for(var i = 0 ; i &lt; length ; i++){<br>        var n = arr[arr.length - 1];<br>        console.log(i, arr.length, n, ‘外层循环’, arr);<br>        for(var j = 0;j &lt; arr.length;j++){<br>            console.log(j, arr.length, n, arr[j], ‘内层循环’, arr);<br>            if(j &lt; arr.length - 1){<br>                if(n === arr[j]){<br>                    arr.pop();<br>                    break;<br>                }<br>            }else{<br>                arr.unshift(arr[arr.length - 1]);<br>                arr.pop();<br>            }<br>        }<br>    }<br>    console.log(arr)<br>第二种方法：</p>
